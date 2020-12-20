@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.NeuralNet.AzureCloud.Point_of_Consumption"
+    android:background="@drawable/pointofconsumption">
+
+
+    <TextView
+        android:id="@+id/protein"
+        android:layout_width="66dp"
+        android:layout_height="31dp"
+        android:textSize="50px"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="36dp" />
+
+    <TextView
+        android:id="@+id/fat"
+        android:layout_width="66dp"
+        android:layout_height="31dp"
+        android:textSize="50px"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="99dp"
+        android:layout_marginLeft="99dp"
+        android:layout_marginTop="35dp"/>
+
+    <TextView
+        android:id="@+id/sat_fat"
+        android:layout_width="66dp"
+        android:layout_height="31dp"
+        android:textSize="50px"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="171dp"
+        android:layout_marginLeft="171dp"
+        android:layout_marginTop="35dp"/>
+
+
+    <TextView
+        android:id="@+id/carbs"
+        android:layout_width="66dp"
+        android:layout_height="31dp"
+        android:textSize="50px"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="243dp"
+        android:layout_marginLeft="243dp"
+        android:layout_marginTop="35dp"/>
+
+    <TextView
+        android:id="@+id/sugar"
+        android:layout_width="66dp"
+        android:layout_height="31dp"
+        android:textSize="50px"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="317dp"
+        android:layout_marginLeft="317dp"
+        android:layout_marginTop="34dp"/>
+
+    <TextView
+        android:id="@+id/calories"
+        android:layout_width="53dp"
+        android:layout_height="29dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="156dp"
+        android:layout_marginLeft="156dp"
+        android:layout_marginTop="488dp"
+        android:textSize="50px" />
+
+    <TextView
+        android:id="@+id/foodDescription"
+        android:layout_width="173dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="118dp"
+        android:layout_marginLeft="118dp"
+        android:layout_marginTop="259dp"
+        android:gravity="center_horizontal"
+        android:textAlignment="center"
+        android:textSize="50px" />
+
+    <ImageView
+        android:id="@+id/foodImage"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="151dp"
+        android:layout_marginLeft="151dp"
+        android:layout_marginTop="177dp" />
+
+    <Button
+        android:id="@+id/leftButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="228dp"
+        android:layout_marginEnd="321dp"
+        android:layout_marginRight="321dp"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/rightButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="228dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginRight="21dp"
+        android:visibility="visible" />
+
+
+    <Button
+        android:id="@+id/breakfastButton"
+        android:layout_width="104dp"
+        android:layout_height="35dp"
+        android:layout_above="@+id/lunchButton"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="307dp"
+        android:layout_marginRight="307dp"
+        android:layout_marginBottom="16dp"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/snacksButton"
+        android:layout_width="104dp"
+        android:layout_height="35dp"
+        android:layout_above="@+id/XtrasButton"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginBottom="18dp"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/dinnerButton"
+        android:layout_width="104dp"
+        android:layout_height="35dp"
+        android:layout_above="@+id/snacksButton"
+        android:layout_marginBottom="14dp"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/lunchButton"
+        android:layout_width="104dp"
+        android:layout_height="35dp"
+        android:layout_above="@+id/dinnerButton"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="304dp"
+        android:layout_marginRight="304dp"
+        android:layout_marginBottom="11dp"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/XtrasButton"
+        android:layout_width="104dp"
+        android:layout_height="35dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="162dp"
+        android:visibility="visible" />
+
+
+    <TextView
+        android:id="@+id/test3"
+        android:layout_width="117dp"
+        android:layout_height="32dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="332dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginRight="7dp"
+        android:layout_toStartOf="@+id/ringerImage"
+        android:layout_toLeftOf="@+id/ringerImage" />
+
+    <ImageView
+        android:id="@+id/ringerImage"
+        android:layout_width="53dp"
+        android:layout_height="34dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="327dp"
+        android:layout_marginEnd="112dp"
+        android:layout_marginRight="112dp"
+        android:src="@drawable/alarmoff" />
+
+    <TextView
+        android:id="@+id/dateID"
+        android:layout_width="89dp"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="401dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:layout_toStartOf="@+id/timeID"
+        android:layout_toLeftOf="@+id/timeID" />
+
+    <TextView
+        android:id="@+id/timeID"
+        android:layout_width="89dp"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="401dp"
+        android:layout_marginEnd="39dp"
+        android:layout_marginRight="39dp"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:layout_toStartOf="@+id/buttonUp"
+        android:layout_toLeftOf="@+id/buttonUp" />
+
+
+    <Button
+        android:id="@+id/buttonDown"
+        android:layout_width="40dp"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="493dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/buttonUp"
+        android:layout_width="35dp"
+        android:layout_height="65dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="354dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="35dp"
+        android:visibility="visible" />
+
+
+    <TextView
+        android:id="@+id/servingAmount"
+        android:layout_width="54dp"
+        android:layout_height="49dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="434dp"
+        android:layout_marginEnd="27dp"
+        android:gravity="center"
+        android:layout_marginRight="27dp" />
+
+
+    <EditText
+        android:id="@+id/userHelpMessage"
+        android:layout_width="325dp"
+        android:layout_height="77dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginBottom="38dp" />
+
+    <Button
+        android:id="@+id/helpButton"
+        android:layout_width="wrap_content"
+        android:layout_height="22dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="696dp"
+        android:layout_marginEnd="271dp"
+        android:layout_marginRight="271dp"
+        android:visibility="invisible" />
+
+
+    <Button
+        android:id="@+id/consumedMealButton"
+        android:layout_width="170dp"
+        android:layout_height="124dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="466dp"
+        android:layout_marginEnd="115dp"
+        android:layout_marginRight="115dp"
+        android:visibility="visible"
+        />
+
+
+</RelativeLayout>

@@ -1,0 +1,1256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.NeuralNet.AzureCloud.DayView">
+
+    <!--<ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="144dp"
+        android:layout_height="344dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/singledaycolumn"
+        tools:layout_editor_absoluteY="54dp" />-->
+
+    <RelativeLayout
+        android:layout_width="699dp"
+        android:layout_height="391dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginRight="7dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="128dp"
+            android:layout_height="358dp"
+            android:layout_below="@+id/tvWeekday"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_calendar_view"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="5dp">
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="19dp"
+                        android:layout_height="match_parent"
+                        android:text="1"
+                        android:textSize="8sp" />
+
+                    <TextView
+                        android:id="@+id/day_time_bar_1"
+                        android:layout_width="106dp"
+                        android:layout_height="wrap_content"
+                        android:background="#007DBA"
+                        android:textSize="8sp"
+                        tools:layout_editor_absoluteX="19dp" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/Divider"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="16dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingTop="0dp"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="17dp">
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="19dp"
+                        android:layout_height="match_parent"
+                        android:text="2"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                    <TextView
+                        android:id="@+id/day_time_bar_2"
+                        android:layout_width="106dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteX="19dp"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/Divider"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="33dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingTop="0dp"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="34dp">
+
+                    <TextView
+                        android:id="@+id/textView10"
+                        android:layout_width="19dp"
+                        android:layout_height="match_parent"
+                        android:text="3"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                    <TextView
+                        android:id="@+id/day_time_bar_3"
+                        android:layout_width="106dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteX="19dp"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/Divider"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="50dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingTop="0dp"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="51dp">
+
+                    <TextView
+                        android:id="@+id/textView12"
+                        android:layout_width="19dp"
+                        android:layout_height="match_parent"
+                        android:text="4"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                    <TextView
+                        android:id="@+id/day_time_bar_4"
+                        android:layout_width="106dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteX="19dp"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/Divider"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="67dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingTop="0dp"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="68dp">
+
+                    <TextView
+                        android:id="@+id/textView14"
+                        android:layout_width="19dp"
+                        android:layout_height="match_parent"
+                        android:text="5"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                    <TextView
+                        android:id="@+id/day_time_bar_5"
+                        android:layout_width="106dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteX="19dp"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/Divider"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="84dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingTop="0dp"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="86dp">
+
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="19dp"
+                        android:layout_height="match_parent"
+                        android:text="6"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteY="4dp" />
+
+                    <TextView
+                        android:id="@+id/day_time_bar_6"
+                        android:layout_width="106dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteX="19dp"
+                        tools:layout_editor_absoluteY="4dp" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/Divider"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="102dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingTop="0dp"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="103dp">
+
+                    <TextView
+                        android:id="@+id/textView18"
+                        android:layout_width="19dp"
+                        android:layout_height="match_parent"
+                        android:text="7"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                    <TextView
+                        android:id="@+id/day_time_bar_7"
+                        android:layout_width="106dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteX="19dp"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/Divider"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="119dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingTop="0dp"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="120dp">
+
+                    <TextView
+                        android:id="@+id/textView20"
+                        android:layout_width="19dp"
+                        android:layout_height="match_parent"
+                        android:text="8"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                    <TextView
+                        android:id="@+id/day_time_bar_8"
+                        android:layout_width="106dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteX="19dp"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/Divider"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="136dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingTop="0dp"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="137dp">
+
+                    <TextView
+                        android:id="@+id/textView22"
+                        android:layout_width="19dp"
+                        android:layout_height="match_parent"
+                        android:text="9"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                    <TextView
+                        android:id="@+id/day_time_bar_9"
+                        android:layout_width="106dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteX="19dp"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/Divider"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="153dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingTop="0dp"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="154dp">
+
+                    <TextView
+                        android:id="@+id/textView24"
+                        android:layout_width="19dp"
+                        android:layout_height="match_parent"
+                        android:text="10"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                    <TextView
+                        android:id="@+id/day_time_bar_10"
+                        android:layout_width="106dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteX="19dp"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/Divider"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="170dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingTop="0dp"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="171dp">
+
+                    <TextView
+                        android:id="@+id/textView26"
+                        android:layout_width="19dp"
+                        android:layout_height="match_parent"
+                        android:text="11"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                    <TextView
+                        android:id="@+id/day_time_bar_11"
+                        android:layout_width="106dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteX="19dp"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/Divider"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="187dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingTop="0dp"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="188dp">
+
+                    <TextView
+                        android:id="@+id/textView28"
+                        android:layout_width="19dp"
+                        android:layout_height="match_parent"
+                        android:text="12"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                    <TextView
+                        android:id="@+id/day_time_bar_12"
+                        android:layout_width="106dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteX="19dp"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/Divider"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="204dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingTop="0dp"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="206dp">
+
+                    <TextView
+                        android:id="@+id/textView30"
+                        android:layout_width="19dp"
+                        android:layout_height="match_parent"
+                        android:text="13"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteY="4dp" />
+
+                    <TextView
+                        android:id="@+id/day_time_bar_13"
+                        android:layout_width="106dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteX="19dp"
+                        tools:layout_editor_absoluteY="4dp" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/Divider"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="222dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingTop="0dp"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="223dp">
+
+                    <TextView
+                        android:id="@+id/textView32"
+                        android:layout_width="19dp"
+                        android:layout_height="match_parent"
+                        android:text="14"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                    <TextView
+                        android:id="@+id/day_time_bar_14"
+                        android:layout_width="106dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteX="19dp"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/Divider"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="239dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingTop="0dp"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="240dp">
+
+                    <TextView
+                        android:id="@+id/textView34"
+                        android:layout_width="19dp"
+                        android:layout_height="match_parent"
+                        android:text="15"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                    <TextView
+                        android:id="@+id/day_time_bar_15"
+                        android:layout_width="106dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteX="19dp"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/Divider"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="256dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingTop="0dp"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="257dp">
+
+                    <TextView
+                        android:id="@+id/textView36"
+                        android:layout_width="19dp"
+                        android:layout_height="match_parent"
+                        android:text="16"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                    <TextView
+                        android:id="@+id/day_time_bar_16"
+                        android:layout_width="106dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteX="19dp"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/Divider"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="273dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingTop="0dp"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="274dp">
+
+                    <TextView
+                        android:id="@+id/textView38"
+                        android:layout_width="19dp"
+                        android:layout_height="match_parent"
+                        android:text="17"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                    <TextView
+                        android:id="@+id/day_time_bar_17"
+                        android:layout_width="106dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteX="19dp"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/Divider"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="290dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingTop="0dp"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="291dp">
+
+                    <TextView
+                        android:id="@+id/textView40"
+                        android:layout_width="19dp"
+                        android:layout_height="match_parent"
+                        android:text="18"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                    <TextView
+                        android:id="@+id/day_time_bar_18"
+                        android:layout_width="106dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteX="19dp"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/Divider"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="307dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingTop="0dp"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="308dp">
+
+                    <TextView
+                        android:id="@+id/textView42"
+                        android:layout_width="19dp"
+                        android:layout_height="match_parent"
+                        android:text="19"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                    <TextView
+                        android:id="@+id/day_time_bar_19"
+                        android:layout_width="106dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteX="19dp"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/Divider"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="324dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingTop="0dp"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="326dp">
+
+                    <TextView
+                        android:id="@+id/textView44"
+                        android:layout_width="19dp"
+                        android:layout_height="match_parent"
+                        android:text="20"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteY="4dp" />
+
+                    <TextView
+                        android:id="@+id/day_time_bar_20"
+                        android:layout_width="106dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteX="19dp"
+                        tools:layout_editor_absoluteY="4dp" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/Divider"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="342dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingTop="0dp"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="343dp">
+
+                    <TextView
+                        android:id="@+id/textView46"
+                        android:layout_width="19dp"
+                        android:layout_height="match_parent"
+                        android:text="21"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                    <TextView
+                        android:id="@+id/day_time_bar_21"
+                        android:layout_width="106dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteX="19dp"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/Divider"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="359dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingTop="0dp"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="360dp">
+
+                    <TextView
+                        android:id="@+id/textView48"
+                        android:layout_width="19dp"
+                        android:layout_height="match_parent"
+                        android:text="22"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                    <TextView
+                        android:id="@+id/day_time_bar_22"
+                        android:layout_width="106dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteX="19dp"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/Divider"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="376dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingTop="0dp"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="377dp">
+
+                    <TextView
+                        android:id="@+id/textView50"
+                        android:layout_width="19dp"
+                        android:layout_height="match_parent"
+                        android:text="23"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                    <TextView
+                        android:id="@+id/day_time_bar_23"
+                        android:layout_width="106dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteX="19dp"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/Divider"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="393dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingTop="0dp"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="394dp">
+
+                    <TextView
+                        android:id="@+id/textView52"
+                        android:layout_width="19dp"
+                        android:layout_height="match_parent"
+                        android:text="24"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                    <TextView
+                        android:id="@+id/day_time_bar_24"
+                        android:layout_width="106dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        tools:layout_editor_absoluteX="19dp"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/Divider"
+                    tools:layout_editor_absoluteX="10dp"
+                    tools:layout_editor_absoluteY="410dp" />
+
+
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/linearLayout6"
+            android:layout_width="241dp"
+            android:layout_height="47dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="170dp"
+            android:layout_marginRight="170dp"
+            android:layout_marginBottom="7dp"
+            android:layout_toStartOf="@+id/linearLayout7"
+            android:layout_toLeftOf="@+id/linearLayout7"
+            android:background="@drawable/rounded_border"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/Enter_Day_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="10dp"
+                android:text="Enter"
+                android:textAllCaps="true"
+                android:textColor="#0C470C"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="10dp"
+                tools:layout_editor_absoluteY="5dp" />
+
+            <Button
+                android:id="@+id/day_erase_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="10dp"
+                android:text="ERASE"
+                android:textAllCaps="true"
+                android:textColor="#741919"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="128dp"
+                tools:layout_editor_absoluteY="5dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="149dp"
+            android:layout_height="341dp"
+            android:layout_below="@+id/imageView2"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="-3dp"
+            android:layout_marginEnd="163dp"
+            android:layout_marginRight="163dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/rounded_border"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/mindset_day_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/mindsetColor"
+                android:text="Mindset"
+                tools:layout_editor_absoluteX="10dp"
+                tools:layout_editor_absoluteY="5dp" />
+
+            <Button
+                android:id="@+id/education_day_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/educationColor"
+                android:text="Education"
+                tools:layout_editor_absoluteX="10dp"
+                tools:layout_editor_absoluteY="53dp" />
+
+            <Button
+                android:id="@+id/social_day_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/socialColor"
+                android:text="Social"
+                tools:layout_editor_absoluteX="10dp"
+                tools:layout_editor_absoluteY="101dp" />
+
+            <Button
+                android:id="@+id/duties_day_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/dutiesColor"
+                android:text="Duties"
+                tools:layout_editor_absoluteX="10dp"
+                tools:layout_editor_absoluteY="149dp" />
+
+            <Button
+                android:id="@+id/health_day_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/healthColor"
+                android:text="Health"
+                tools:layout_editor_absoluteX="10dp"
+                tools:layout_editor_absoluteY="197dp" />
+
+            <Button
+                android:id="@+id/tranquility_day_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/tranquilityColor"
+                android:text="Tranquility"
+                tools:layout_editor_absoluteX="10dp"
+                tools:layout_editor_absoluteY="245dp" />
+
+            <Button
+                android:id="@+id/rest_day_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/restColor"
+                android:text="Rest"
+                tools:layout_editor_absoluteX="10dp"
+                tools:layout_editor_absoluteY="293dp" />
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/day_left_button"
+            android:layout_width="43dp"
+            android:layout_height="25dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="16dp"
+            android:background="#00FFFFFF"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/left_arrow" />
+
+        <TextView
+            android:id="@+id/tvWeekday"
+            android:layout_width="52dp"
+            android:layout_height="19dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="-4dp"
+            android:layout_marginLeft="-4dp"
+            android:layout_marginTop="18dp"
+            android:layout_toEndOf="@+id/day_left_button"
+            android:layout_toRightOf="@+id/day_left_button"
+            android:text="TextView"
+            tools:text="@string/currentDay" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="209dp"
+            android:layout_height="43dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="46dp"
+            android:layout_marginLeft="46dp"
+            android:layout_marginTop="2dp"
+            android:layout_toEndOf="@+id/day_right_button"
+            android:layout_toRightOf="@+id/day_right_button"
+            app:srcCompat="@drawable/montralogo" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="128dp"
+            android:layout_height="62dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/rounded_border"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="time blocks"
+                    android:textSize="6sp" />
+
+                <TextView
+                    android:id="@+id/textView55"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="display toggle"
+                    android:textSize="6sp" />
+
+                <Button
+                    android:id="@+id/button7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="issues"
+                    android:textSize="6sp" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/imageButton12"
+                android:layout_width="107dp"
+                android:layout_height="15dp"
+                android:layout_alignStart="@+id/linearLayout4"
+                android:layout_alignBottom="@+id/linearLayout4"
+                android:background="#00FFFFFF"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/templatebutton" />
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/day_right_button"
+            android:layout_width="43dp"
+            android:layout_height="25dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="94dp"
+            android:layout_marginLeft="94dp"
+            android:layout_marginTop="16dp"
+            android:background="#00FFFFFF"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/right_arrow" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="250dp"
+            android:layout_height="280dp"
+            android:layout_above="@+id/linearLayout6"
+            android:layout_below="@+id/imageView2"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginBottom="8dp"
+            android:layout_toEndOf="@+id/scrollView2"
+            android:layout_toRightOf="@+id/scrollView2"
+            android:background="@drawable/rounded_border"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/day_current_task_text"
+                android:layout_width="221dp"
+                android:layout_height="55dp"
+                android:background="@drawable/rounded_corner_mind"
+                android:gravity="center"
+                android:hint="Name"
+                android:text="@string/currentTask"
+                android:textSize="24sp"
+                tools:layout_editor_absoluteX="18dp"
+                tools:layout_editor_absoluteY="5dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="10dp"
+                tools:layout_editor_absoluteX="10dp"
+                tools:layout_editor_absoluteY="215dp">
+
+                <EditText
+                    android:id="@+id/start_time_day"
+                    android:layout_width="49dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="start time"
+                    android:inputType="time"
+                    android:textSize="10sp"
+                    tools:layout_editor_absoluteY="10dp" />
+
+                <EditText
+                    android:id="@+id/end_time_day"
+                    android:layout_width="59dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="end time"
+                    android:inputType="time"
+                    android:textSize="10sp"
+                    tools:layout_editor_absoluteX="90dp"
+                    tools:layout_editor_absoluteY="10dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/fourCharCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Code"
+                    android:inputType="textPersonName"
+                    android:textSize="10sp" />
+
+                <EditText
+                    android:id="@+id/codeNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Number"
+                    android:inputType="textPersonName"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/Note_day_field"
+                    android:layout_width="189dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/rounded_notes"
+                    android:ems="10"
+                    android:gravity="top"
+                    android:hint="@string/currentTaskNotes"
+                    android:inputType="textPersonName"
+                    android:isScrollContainer="true"
+                    android:keepScreenOn="false"
+                    android:paddingTop="15dp"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="60dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/day_button_up"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        app:srcCompat="@android:drawable/arrow_up_float" />
+
+                    <ImageButton
+                        android:id="@+id/day_button_down"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        app:srcCompat="@android:drawable/arrow_down_float" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout7"
+            android:layout_width="136dp"
+            android:layout_height="113dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="3dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/priority_day_text"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:text="1"
+                    tools:text="1" />
+
+                <ImageButton
+                    android:id="@+id/imageButton14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@android:drawable/arrow_up_float" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView62"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="PRIORITY"
+                android:textSize="21sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView63"
+                    android:layout_width="109dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+
+                    android:text="+"
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/imageButton15"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    app:srcCompat="@android:drawable/arrow_down_float" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/backtoweek"
+            android:layout_width="99dp"
+            android:layout_height="46dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="26dp"
+            android:layout_marginLeft="26dp"
+            android:layout_marginTop="-2dp"
+            android:layout_marginEnd="55dp"
+            android:layout_marginRight="55dp"
+            android:layout_toStartOf="@+id/linearLayout4"
+            android:layout_toLeftOf="@+id/linearLayout4"
+            android:layout_toEndOf="@+id/imageView2"
+            android:layout_toRightOf="@+id/imageView2"
+            android:text="Back to week view"
+            android:textSize="9sp" />
+
+        <Spinner
+            android:id="@+id/minorcatSpinner"
+            android:layout_width="348dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/linearLayout7"
+            android:layout_marginStart="-163dp"
+            android:layout_marginLeft="-163dp"
+            android:layout_marginBottom="149dp"
+            android:layout_toEndOf="@+id/linearLayout"
+            android:layout_toRightOf="@+id/linearLayout"
+            android:spinnerMode="dropdown" />
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

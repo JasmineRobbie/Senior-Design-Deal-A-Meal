@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.teamcarl.prototype">
+    <!-- NEEDED TO ACCESS NETWORK/WIFI -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.NeuralNet.AzureCloud.FullMessage2"></activity>
+        <activity android:name="com.NeuralNet.AzureCloud.Inbox" />
+        <activity
+            android:name="com.NeuralNet.AzureCloud.FourWeekPlan"
+            android:screenOrientation="landscape" />
+        <activity android:name="com.NeuralNet.AzureCloud.Bistromenu" />
+        <activity android:name="com.NeuralNet.AzureCloud.UserProfile" />
+        <activity android:name="com.NeuralNet.AzureCloud.AboutMe" />
+        <activity android:name="com.NeuralNet.AzureCloud.MyGoals" />
+        <activity android:name="com.NeuralNet.AzureCloud.EditUserInfo" />
+        <activity android:name="com.NeuralNet.AzureCloud.Point_of_Consumption" />
+        <activity android:name="com.NeuralNet.AzureCloud.DealAMealList" />
+        <activity android:name="com.NeuralNet.AzureCloud.Register">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.NeuralNet.AzureCloud.MainMenu"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.NeuralNet.AzureCloud.Messages" />
+        <activity
+            android:name="com.NeuralNet.AzureCloud.NewMessage"
+            android:windowSoftInputMode="stateVisible|adjustPan" />
+        <activity android:name="com.NeuralNet.AzureCloud.fullMessage" />
+        <activity android:name="com.NeuralNet.AzureCloud.Guide" />
+        <activity
+            android:name="com.NeuralNet.AzureCloud.MainActivity"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.NeuralNet.AzureCloud.DayView"
+            android:screenOrientation="sensorLandscape" />
+        <activity
+            android:name="com.NeuralNet.AzureCloud.SurveyPage"
+            android:screenOrientation="sensorLandscape" />
+        <activity android:name="com.NeuralNet.AzureCloud.FinalEvaluation" />
+        <!--
+ ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity android:name="com.NeuralNet.AzureCloud.login" />
+        <activity android:name="com.NeuralNet.AzureCloud.RegisterInfo" />
+        <activity
+            android:name="com.NeuralNet.AzureCloud.Purpose"
+            android:label="@string/title_activity_purpose" />
+        <activity
+            android:name="com.NeuralNet.AzureCloud.Final_Referal"
+            android:label="@string/title_activity_final__referal" />
+        <activity
+            android:name="com.NeuralNet.AzureCloud.Activemenu"
+            android:label="@string/title_activity_activemenu" />
+    </application>
+
+</manifest>
