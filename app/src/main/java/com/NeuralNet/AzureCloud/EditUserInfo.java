@@ -8,8 +8,13 @@ import android.widget.TextView;
 
 import com.teamcarl.prototype.R;
 
-public class EditUserInfo extends Activity{
-    TextView editUserReturnBtn;
+import java.sql.ResultSet;
+
+public class EditUserInfo extends Activity {
+    TextView editPhone;
+    DataAccess db = new DataAccess();
+
+    Button editUserReturnBtn, submitUserInfoBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +22,7 @@ public class EditUserInfo extends Activity{
         setContentView(R.layout.edit_user_info);
 
         editUserReturnBtn = findViewById(R.id.editUserReturnBtn);
+        submitUserInfoBtn = findViewById(R.id.submitUserInfoBtn);
         //testing
 
         //Return button
@@ -28,6 +34,16 @@ public class EditUserInfo extends Activity{
             }
         });
 
-
+        //If user clicks submit button, check any new info entered
+        submitUserInfoBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(User.PhoneNumber != (AboutMe.aboutMePhone_input.toString())){
+                    String query =
+                            ("UPDATE USERS SET PhoneNumber = " + AboutMe.aboutMePhone_input + " WHERE userid = " + User.UserID);
+                    db.executeNonQuery(query);
+                }
+            }
+        });
     }
 }

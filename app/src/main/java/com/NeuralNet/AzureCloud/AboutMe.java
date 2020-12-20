@@ -9,7 +9,7 @@ import android.widget.TextView;
 import com.teamcarl.prototype.R;
 
 public class AboutMe extends Activity {
-    TextView aboutMeUserID_input, aboutMePassword_input, aboutMeFirstName_input, aboutMeLastName_input,
+    public static TextView aboutMeUserID_input, aboutMePassword_input, aboutMeFirstName_input, aboutMeLastName_input,
             aboutMeEmail_input, aboutMePhone_input, aboutMeState_input, aboutMeCity_input, aboutMeStreet_input, aboutMeCountry_input;
 
     Button aboutMeReturnBtn, aboutMeEditInfo;
