@@ -10,7 +10,7 @@ import com.teamcarl.prototype.R;
 
 public class AboutMe extends Activity {
     TextView aboutMeUserID_input, aboutMePassword_input, aboutMeFirstName_input, aboutMeLastName_input,
-            aboutMeEmail_input, aboutMePhone_input, aboutMeState_input, aboutMeCity_input, aboutMeStreet_input;
+            aboutMeEmail_input, aboutMePhone_input, aboutMeState_input, aboutMeCity_input, aboutMeStreet_input, aboutMeCountry_input;
 
     Button aboutMeReturnBtn, aboutMeEditInfo;
 
@@ -26,9 +26,8 @@ public class AboutMe extends Activity {
         aboutMeEmail_input = findViewById(R.id.aboutMeEmail_input);
         aboutMeReturnBtn = findViewById(R.id.aboutMeReturnBtn);
         aboutMeEditInfo = findViewById(R.id.aboutMeEditInfo);
-
-        //NEED TO ADD THESE IN USER.JAVA
         aboutMePhone_input = findViewById(R.id.aboutMePhone_input);
+        aboutMeCountry_input = findViewById(R.id.aboutMeCountry_input);
         aboutMeState_input = findViewById(R.id.aboutMeState_input);
         aboutMeCity_input = findViewById(R.id.aboutMeCity_input);
         aboutMeStreet_input = findViewById(R.id.aboutMeStreet_input);
@@ -87,11 +86,39 @@ public class AboutMe extends Activity {
             aboutMeEmail_input.setText(User.Email);
         }
 
-/*        if(User.Phone.isEmpty()){
+       if(User.PhoneNumber.isEmpty()){
             aboutMePhone_input.setText("N/A");
         }
         else{
-            aboutMePhone_input.setText(User.Phone);
-        }*/
+            aboutMePhone_input.setText(User.PhoneNumber);
+        }
+
+        if(User.Country.isEmpty()){
+            aboutMeCountry_input.setText("N/A");
+        }
+        else{
+            aboutMeCountry_input.setText(User.Country);
+        }
+
+        if(User.State.isEmpty()){
+            aboutMeState_input.setText("N/A");
+        }
+        else{
+            aboutMeState_input.setText(User.State);
+        }
+
+        if(User.City.isEmpty()){
+            aboutMeCity_input.setText("N/A");
+        }
+        else{
+            aboutMeCity_input.setText(User.City);
+        }
+
+        if(User.Street.isEmpty()){
+            aboutMeStreet_input.setText("N/A");
+        }
+        else{
+            aboutMeStreet_input.setText(User.Street);
+        }
     }
 }
