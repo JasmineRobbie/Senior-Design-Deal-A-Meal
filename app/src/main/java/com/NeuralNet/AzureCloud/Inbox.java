@@ -46,9 +46,11 @@ public class Inbox extends Activity {
             String body;
             int priority;
             String Subject;
+            int messageId;
 
 
-            public messageInformation(int sendUserId, int receiverUserId, String body, String subject, int priority){
+            public messageInformation(int messageId,int sendUserId, int receiverUserId, String body, String subject, int priority){
+                this.messageId = messageId;
                 this.SenderUserId = sendUserId;
                 this.ReceiverUserId = receiverUserId;
                 this.body = body;
@@ -61,13 +63,14 @@ public class Inbox extends Activity {
             public int getReceiver(){return ReceiverUserId;}
             public String getSubject(){return Subject;}
             public int getPriority(){return priority;}
+            public int getMessageId(){return messageId;}
         }
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.listview);
         messageList = (ListView) findViewById(R.id.messageListNew);
         final List<messageInformation> userMessage = new ArrayList<>();
 
-        String query = "SELECT SenderUserId, ReceiverUserId, Subject, Body, Priority FROM Message WHERE ReceiverUserId =" + user.UserID;
+        String query = "SELECT MessageId, SenderUserId, ReceiverUserId, Subject, Body, Priority FROM Message WHERE ReceiverUserId =" + user.UserID;
 
         final ResultSet results = db.getDataTable(query);
 
@@ -75,7 +78,7 @@ public class Inbox extends Activity {
 
             while(results.next()){
 
-                messageInformation messageInformation = new messageInformation(results.getInt(1), results.getInt(2), results.getString(4), results.getString(3), results.getInt(5));
+                messageInformation messageInformation = new messageInformation(results.getInt(1),results.getInt(2), results.getInt(3), results.getString(5), results.getString(4), results.getInt(6));
 
                 userMessage.add(messageInformation);
 
@@ -103,12 +106,14 @@ public class Inbox extends Activity {
                 int receiverId = userMessage.get(position).getReceiver();
                 int priority = userMessage.get(position).getPriority();
                 String subject = userMessage.get(position).getSubject();
+                int messageId = userMessage.get(position).getMessageId();
 
                 intent.putExtra("messageBody", body);
                 intent.putExtra("messageSender", senderId);
                 intent.putExtra("messageReceiver", receiverId);
                 intent.putExtra("messagePriority", priority);
                 intent.putExtra("messageSubject", subject);
+                intent.putExtra("messageId", messageId);
                 intent.putExtra("User", user);
 
                 startActivity(intent);
