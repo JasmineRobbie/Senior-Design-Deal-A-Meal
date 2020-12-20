@@ -54,6 +54,7 @@ public class User implements Serializable {
                     ", ISNULL(State,'')\n" +
                     ", ISNULL(City,'')\n" +
                     ", ISNULL(StreetAddress,'')\n" +
+                    ", ISNULL(Password,'')\n" +
                     "FROM USERS u\n" +
                     "JOIN BRAND b ON u.brandNumber = b.brandId\n" +
                     "WHERE userid = '" + UserID + "'";
@@ -72,6 +73,7 @@ public class User implements Serializable {
                 State = result.getString(11);
                 City = result.getString(12);
                 Street = result.getString(13);
+                Password = result.getString(14);
             }
         }
         catch(Exception e)
