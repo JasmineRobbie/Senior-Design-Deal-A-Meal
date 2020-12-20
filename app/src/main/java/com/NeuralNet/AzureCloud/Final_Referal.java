@@ -14,13 +14,16 @@ import android.widget.Toast;
 
 import com.teamcarl.prototype.R;
 
+import java.sql.ResultSet;
+
 public class Final_Referal extends Activity {
     ImageButton newMessageBtn, sendresponsebutton, acceptRefferal;
     User user;
     String url;
     InternalDataAccess ida = new InternalDataAccess();
-    TextView brandNameText;
-
+    TextView brandNameText, activeInfoText;
+    //Added by Rhagavi
+    int ActiveGuide;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +34,38 @@ public class Final_Referal extends Activity {
         user = (User) intent.getExtras().getSerializable("User");
         url = intent.getExtras().getString("Url");
 
+        //Let's implement the User & Active Info
+        DataAccess db = new DataAccess();
+        //Testing
+        System.out.println("user.BrandName: " + user.BrandName);
+        System.out.println("user.BrandLink: " + user.BrandLink);
+        System.out.println("user.BrandNumber: "+ user.BrandNumber);
+        System.out.println("user.UserID: " + user.UserID);
+        //Added to figure out the Active Guide value
+        String queryActiveGuide = "SELECT ActiveGuide \n" +
+                "FROM brand \n" +
+                "WHERE BrandId = '" + user.BrandNumber + "'";
+        ResultSet activeGuideResult = db.getDataTable(queryActiveGuide);
+        try{
+            while(activeGuideResult.next()){
+                ActiveGuide = activeGuideResult.getInt(1);
+            }
+        }catch(Exception e){
+            Toast.makeText(getApplicationContext(), "error to calculate for ActiveGuide #", Toast.LENGTH_SHORT).show();
+        }
+        System.out.println("ActiveGuide #: " + ActiveGuide);
+        //end of finding out for ActiveGuide
+
+        //Let's add the Active Guide info onto the Guide Evaluation
+        activeInfoText = (TextView)findViewById(R.id.ActiveGuideText);
+        activeInfoText.setText("User ID: "+ user.UserID +
+                "\n " + "BrandLink: " + user.BrandLink + "\n" +
+                "Brand Number: " + user.BrandNumber + "\n" +
+                "Brand Name: " + user.BrandName + "\n" +
+                "Active Guide #: " + ActiveGuide);
+        //end of implementing info for Active Guide and User
+
+
         TextView link = (TextView)findViewById(R.id.textView5);
         link.setText("please visit " + url + " by pressing the accept referal button in the top right");
         // on new message button click
@@ -40,7 +75,7 @@ public class Final_Referal extends Activity {
         newMessageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Final_Referal.this, MainMenu.class);
+                Intent intent = new Intent(Final_Referal.this, Activemenu.class);
                 intent.putExtra("User", user);
                 startActivity(intent);
             }

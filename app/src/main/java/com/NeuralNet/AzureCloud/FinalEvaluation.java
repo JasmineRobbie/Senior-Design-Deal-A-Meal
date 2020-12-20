@@ -22,10 +22,11 @@ public class FinalEvaluation extends Activity {
     ImageButton newMessageBtn, sendresponsebutton, urllink;
     User user;
     String referralText = "";
-    TextView referralText_UI, brandNameText;
+    TextView referralText_UI, brandNameText, activeInfoText;
     int referralType = 0;
     InternalDataAccess ida = new InternalDataAccess();
-
+    //Added by Rhagavi
+    int ActiveGuide;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         DataAccess db = new DataAccess();
@@ -35,6 +36,34 @@ public class FinalEvaluation extends Activity {
         Intent intent = getIntent();
         user = (User) intent.getExtras().getSerializable("User");
         // set brand name
+        //Testing
+        System.out.println("user.BrandName: " + user.BrandName);
+        System.out.println("user.BrandLink: " + user.BrandLink);
+        System.out.println("user.BrandNumber: "+ user.BrandNumber);
+        System.out.println("user.UserID: " + user.UserID);
+        //Added to figure out the Active Guide value
+        String queryActiveGuide = "SELECT ActiveGuide \n" +
+                "FROM brand \n" +
+                "WHERE BrandId = '" + user.BrandNumber + "'";
+        ResultSet activeGuideResult = db.getDataTable(queryActiveGuide);
+        try{
+            while(activeGuideResult.next()){
+                ActiveGuide = activeGuideResult.getInt(1);
+            }
+        }catch(Exception e){
+            Toast.makeText(getApplicationContext(), "error to calculate for ActiveGuide #", Toast.LENGTH_SHORT).show();
+        }
+        System.out.println("ActiveGuide #: " + ActiveGuide);
+        //end of finding out for ActiveGuide
+
+        //Let's add the Active Guide info onto the Guide Evaluation
+        activeInfoText = (TextView)findViewById(R.id.ActiveGuideText);
+        activeInfoText.setText("User ID: "+ user.UserID +
+                "\n " + "BrandLink: " + user.BrandLink + "\n" +
+                "Brand Number: " + user.BrandNumber + "\n" +
+                "Brand Name: " + user.BrandName + "\n" +
+                "Active Guide #: " + ActiveGuide);
+
         brandNameText = (TextView)findViewById(R.id.brandName);
         brandNameText.setText(user.BrandName);
         if(isConnectedOnline()) {
