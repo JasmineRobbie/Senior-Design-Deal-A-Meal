@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.NeuralNet.AzureCloud.ReplyMessage"
+    android:background="@drawable/aim_memo_read">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/confirmReply"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_above="@+id/ReplyMessageBox"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="47dp"
+            android:layout_marginBottom="72dp"
+            android:textSize="30dp"
+            android:text="Reply to:"
+            />
+
+        <EditText
+            android:id="@+id/ReplyMessageBox"
+            android:layout_width="357dp"
+            android:layout_height="177dp"
+            android:layout_above="@+id/replySubjectBox"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="27dp"
+            android:layout_marginBottom="79dp"
+            android:hint="Send message" />
+
+        <EditText
+            android:id="@+id/replySubjectBox"
+            android:layout_width="359dp"
+            android:layout_height="94dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="22dp"
+            android:layout_marginEnd="31dp"
+            android:layout_marginBottom="122dp"
+            android:hint="Subject"/>
+
+
+        <Button
+            android:id="@+id/sendReplyBtn"
+            android:layout_width="116dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="29dp"
+            android:layout_marginBottom="24dp" />
+
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

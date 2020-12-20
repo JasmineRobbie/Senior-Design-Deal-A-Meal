@@ -11,7 +11,7 @@
     android:background="@drawable/aim_memo_read">
 
 
-    <GridLayout
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -37,13 +37,7 @@
             android:paddingRight="20dp"
             android:paddingBottom="20dp" />
 
-        <ImageView
-            android:layout_width="129dp"
-            android:layout_height="195dp"
-            android:id="@+id/imageView3"
-            android:layout_row="0"
-            android:layout_column="0"
-            android:src="@drawable/einstein" />
+
 
         <TextView
             android:text="TextView"
@@ -90,6 +84,6 @@
             android:layout_toStartOf="@+id/btn_delete"
             android:alpha="0" />
 
-    </GridLayout>
+    </RelativeLayout>
 
 </RelativeLayout>
