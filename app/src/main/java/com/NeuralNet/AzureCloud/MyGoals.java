@@ -69,7 +69,6 @@ public class MyGoals extends Activity{
         }
         else{
             myWeightText.setText(User.Weight);
-            System.out.println("Weight is:" + User.Weight);
         }
 
         if(User.BMI.isEmpty()){
