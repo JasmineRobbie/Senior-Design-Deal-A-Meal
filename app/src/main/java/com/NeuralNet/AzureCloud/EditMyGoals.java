@@ -26,7 +26,7 @@ public class EditMyGoals extends Activity implements OnItemSelectedListener{
     DataAccess db = new DataAccess();
     String BMIString;
 
-    Button editMyGoalsReturnBtn, calculateBMIbtn;
+    Button editMyGoalsReturnBtn, calculateBMIbtn, goalsEditSubmitBtn;
     EditText myWeightEditInput;
     TextView myNewCalculatedBMI;
     Spinner myHeightFeetInput, myHeightInchesInput, chooseGoalInput;
@@ -45,6 +45,7 @@ public class EditMyGoals extends Activity implements OnItemSelectedListener{
         calculateBMIbtn = findViewById(R.id.calculateBMIbtn);
         myWeightEditInput = findViewById(R.id.myWeightEditInput);
         myNewCalculatedBMI = findViewById(R.id.myNewCalculatedBMI);
+        goalsEditSubmitBtn = findViewById(R.id.goalsEditSubmitBtn);
 
         //Spinner declaration
         myHeightFeetInput = findViewById(R.id.myHeightFeetInput);
@@ -74,15 +75,9 @@ public class EditMyGoals extends Activity implements OnItemSelectedListener{
         heightInInches.add("10");
         heightInInches.add("11");
 
-        goals.add("3");
-        goals.add("4");
-        goals.add("5");
-        goals.add("6");
-        goals.add("7");
-        goals.add("8");
-        goals.add("9");
-        goals.add("10");
-        goals.add("11");
+        goals.add("Lose Weight");
+        goals.add("Maintain Weight");
+        goals.add("Gain Weight");
 
         // Creating adapter for spinner
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, heightInFeet);
@@ -99,12 +94,22 @@ public class EditMyGoals extends Activity implements OnItemSelectedListener{
         myHeightInchesInput.setAdapter(dataAdapter2);
         chooseGoalInput.setAdapter(dataAdapter3);
 
-        //Return button
+        //Only calculating BMI button
         calculateBMIbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 calculateBMI();
                 Toast.makeText(getApplicationContext(), "Calculated BMI", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        //Adding new goals button
+        goalsEditSubmitBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                calculateBMI();
+                setNewGoal();
+                Toast.makeText(getApplicationContext(), "Submitted", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -160,13 +165,27 @@ public class EditMyGoals extends Activity implements OnItemSelectedListener{
 
         System.out.println("BMI= " + BMIString);
 
-        String insertQuery = "UPDATE USERS SET BMI = '" + BMIString + "', Weight = '" + userWeight + "' WHERE userid = " + User.UserID;
+        String query = "UPDATE USERS SET BMI = '" + BMIString + "', Weight = '" + userWeight + "' WHERE userid = " + User.UserID;
 
         try {
-            db.executeNonQuery(insertQuery);
-            System.out.println("Executed Query");
+            db.executeNonQuery(query);
         } catch (Exception e) {
             System.out.println("OOPS Something went wrong.");
         }
     }
+
+    public void setNewGoal(){
+        String goal = chooseGoalInput.getSelectedItem().toString();
+
+        System.out.println("Goal Chosen= " + goal);
+
+        String query = "UPDATE USERS SET Goal = '" + goal + "' WHERE userid = " + User.UserID;
+
+        try {
+            db.executeNonQuery(query);
+        } catch (Exception e) {
+            System.out.println("OOPS Something went wrong.");
+        }
+    }
+
 }
