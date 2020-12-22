@@ -22,6 +22,10 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Toast;
 
 public class EditMyGoals extends Activity implements OnItemSelectedListener{
+    //Accessing database and selecting information
+    DataAccess db = new DataAccess();
+    String BMIString;
+
     Button editMyGoalsReturnBtn, calculateBMIbtn;
     EditText myWeightEditInput;
     TextView myNewCalculatedBMI;
@@ -134,10 +138,19 @@ public class EditMyGoals extends Activity implements OnItemSelectedListener{
         System.out.println("Height= " + h + " Inches=" + i + " Weight= " + w);
         System.out.println("User Height= " + userHeight + " User Weight=" + userWeight);
 
-        String BMIString = String.valueOf(roundedValue);
+        BMIString = String.valueOf(roundedValue);
 
         myNewCalculatedBMI.setText(BMIString);
-        System.out.println(roundedValue);
-        System.out.println(BMIString);
+
+        System.out.println("BMI= " + BMIString);
+
+        String insertQuery = "UPDATE USERS SET BMI = '" + BMIString + "', Weight = '" + userWeight + "' WHERE userid = " + User.UserID;
+
+        try {
+            db.executeNonQuery(insertQuery);
+            System.out.println("Executed Query");
+        } catch (Exception e) {
+            System.out.println("OOPS Something went wrong.");
+        }
     }
 }
