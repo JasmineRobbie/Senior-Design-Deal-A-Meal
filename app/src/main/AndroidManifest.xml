@@ -23,6 +23,7 @@
         <activity android:name="com.NeuralNet.AzureCloud.EditUserInfo" />
         <activity android:name="com.NeuralNet.AzureCloud.Point_of_Consumption" />
         <activity android:name="com.NeuralNet.AzureCloud.DealAMealList" />
+        <activity android:name="com.NeuralNet.AzureCloud.EditMyGoals" />
         <activity android:name="com.NeuralNet.AzureCloud.Register">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

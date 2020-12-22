@@ -29,6 +29,13 @@ public class User implements Serializable {
     public static String State;
     public static String City;
     public static String Street;
+    //newly added
+    public static String BMI;
+    public static String Weight;
+    public static String Goal;
+    public static String Guide;
+    public static String AllowedCalories;
+
 
     public boolean isAnonymous;
 
@@ -55,6 +62,13 @@ public class User implements Serializable {
                     ", ISNULL(City,'')\n" +
                     ", ISNULL(StreetAddress,'')\n" +
                     ", ISNULL(Password,'')\n" +
+                    //newly added
+                    ", ISNULL(BMI,'')\n" +
+                    ", ISNULL(Weight,'')\n" +
+                    ", ISNULL(Goal,'')\n" +
+                    ", ISNULL(Guide,'')\n" +
+                    ", ISNULL(AllowedCalories,'')\n" +
+
                     "FROM USERS u\n" +
                     "JOIN BRAND b ON u.brandNumber = b.brandId\n" +
                     "WHERE userid = '" + UserID + "'";
@@ -74,6 +88,12 @@ public class User implements Serializable {
                 City = result.getString(12);
                 Street = result.getString(13);
                 Password = result.getString(14);
+                //Nely added
+                BMI = result.getString(15);
+                Weight = result.getString(16);
+                Goal = result.getString(17);
+                Guide = result.getString(18);
+                AllowedCalories = result.getString(19);
             }
         }
         catch(Exception e)
