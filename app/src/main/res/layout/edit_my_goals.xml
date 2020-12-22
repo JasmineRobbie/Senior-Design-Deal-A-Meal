@@ -73,19 +73,6 @@
         android:textSize="60px" />
 
     <TextView
-        android:id="@+id/allowedCaloriesEditText"
-        android:layout_width="130dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="249dp"
-        android:layout_marginLeft="249dp"
-        android:layout_marginTop="524dp"
-        android:text=" "
-        android:textSize="60px" />
-
-    <TextView
         android:id="@+id/allowedCalories"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -94,8 +81,21 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="19dp"
         android:layout_marginLeft="19dp"
-        android:layout_marginTop="526dp"
+        android:layout_marginTop="532dp"
         android:text="Allowed Calories: "
+        android:textSize="60px" />
+
+    <TextView
+        android:id="@+id/allowedCaloriesUpdatedText"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="252dp"
+        android:layout_marginLeft="252dp"
+        android:layout_marginTop="531dp"
+        android:text=" "
         android:textSize="60px" />
 
     <EditText
@@ -186,7 +186,7 @@
         android:textSize="60px" />
 
     <TextView
-        android:id="@+id/currentGoal"
+        android:id="@+id/chooseGoalText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -195,11 +195,11 @@
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="470dp"
-        android:text="Current Goal: "
+        android:text="Choose Goal: "
         android:textSize="60px" />
 
     <Spinner
-        android:id="@+id/myGoalEditText"
+        android:id="@+id/chooseGoalInput"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"

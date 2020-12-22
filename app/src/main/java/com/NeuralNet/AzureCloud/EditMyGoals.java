@@ -29,11 +29,12 @@ public class EditMyGoals extends Activity implements OnItemSelectedListener{
     Button editMyGoalsReturnBtn, calculateBMIbtn;
     EditText myWeightEditInput;
     TextView myNewCalculatedBMI;
-    Spinner myHeightFeetInput, myHeightInchesInput;
+    Spinner myHeightFeetInput, myHeightInchesInput, chooseGoalInput;
     double userHeight, userWeight, calculatedBMI;
 
     List<String> heightInFeet = new ArrayList<String>();
     List<String> heightInInches = new ArrayList<String>();
+    List<String> goals = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,9 +49,11 @@ public class EditMyGoals extends Activity implements OnItemSelectedListener{
         //Spinner declaration
         myHeightFeetInput = findViewById(R.id.myHeightFeetInput);
         myHeightInchesInput = findViewById(R.id.myHeightInchesInput);
+        chooseGoalInput = findViewById(R.id.chooseGoalInput);
 
         myHeightFeetInput.setOnItemSelectedListener(this);
         myHeightInchesInput.setOnItemSelectedListener(this);
+        chooseGoalInput.setOnItemSelectedListener(this);
 
         // Spinner Drop down elements
         heightInFeet.add("3");
@@ -71,17 +74,30 @@ public class EditMyGoals extends Activity implements OnItemSelectedListener{
         heightInInches.add("10");
         heightInInches.add("11");
 
+        goals.add("3");
+        goals.add("4");
+        goals.add("5");
+        goals.add("6");
+        goals.add("7");
+        goals.add("8");
+        goals.add("9");
+        goals.add("10");
+        goals.add("11");
+
         // Creating adapter for spinner
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, heightInFeet);
         ArrayAdapter<String> dataAdapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, heightInInches);
+        ArrayAdapter<String> dataAdapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, goals);
 
         // Drop down layout style - list view with radio button
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         dataAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        dataAdapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         // attaching data adapter to spinner
         myHeightFeetInput.setAdapter(dataAdapter);
         myHeightInchesInput.setAdapter(dataAdapter2);
+        chooseGoalInput.setAdapter(dataAdapter3);
 
         //Return button
         calculateBMIbtn.setOnClickListener(new View.OnClickListener() {
