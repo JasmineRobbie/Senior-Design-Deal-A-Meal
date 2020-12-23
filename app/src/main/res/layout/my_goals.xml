@@ -19,6 +19,151 @@
         android:text="My Goals"
         android:textSize="100px" />
 
+    <TextView
+        android:id="@+id/myWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="17dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="128dp"
+        android:text="My Weight: "
+        android:textSize="60px" />
+
+    <TextView
+        android:id="@+id/myWeightPounds"
+        android:layout_width="43dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="368dp"
+        android:layout_marginLeft="368dp"
+        android:layout_marginTop="139dp"
+        android:text="lbs"
+        android:textSize="40px" />
+
+    <TextView
+        android:id="@+id/myGoalText"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="240dp"
+        android:layout_marginLeft="240dp"
+        android:layout_marginTop="296dp"
+        android:text=" "
+        android:textSize="60px" />
+
+    <TextView
+        android:id="@+id/myWeightText"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="238dp"
+        android:layout_marginLeft="238dp"
+        android:layout_marginTop="128dp"
+        android:text=" "
+        android:textSize="60px" />
+
+    <TextView
+        android:id="@+id/myBMIText"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="239dp"
+        android:layout_marginLeft="239dp"
+        android:layout_marginTop="202dp"
+        android:text=" "
+        android:textSize="60px" />
+
+    <TextView
+        android:id="@+id/allowedCaloriesText"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="242dp"
+        android:layout_marginLeft="242dp"
+        android:layout_marginTop="374dp"
+        android:text=" "
+        android:textSize="60px" />
+
+    <TextView
+        android:id="@+id/myBMI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="17dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="210dp"
+        android:text="My BMI: "
+        android:textSize="60px" />
+
+    <TextView
+        android:id="@+id/allowedCalories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="376dp"
+        android:text="Allowed Calories: "
+        android:textSize="60px" />
+
+    <Button
+        android:id="@+id/goalsEditButton"
+        android:layout_width="151dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="231dp"
+        android:layout_marginLeft="231dp"
+        android:layout_marginTop="662dp"
+        android:text="Edit Goals"
+        android:textSize="60px" />
+
+    <Button
+        android:id="@+id/myGoalsReturnButton"
+        android:layout_width="151dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="662dp"
+        android:text="Return"
+        android:textSize="60px" />
+
+    <TextView
+        android:id="@+id/currentGoal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="298dp"
+        android:text="Current Goal: "
+        android:textSize="60px" />
+
+
+
 
 </RelativeLayout>
 
