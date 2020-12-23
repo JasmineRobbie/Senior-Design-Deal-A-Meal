@@ -149,7 +149,6 @@ public class EditMyGoals extends Activity implements OnItemSelectedListener{
 
         userHeight = ((h*12) + (i));
         userWeight = w;
-
         calculatedBMI = (703 * userWeight) / (userHeight * userHeight);
 
         //Round value
@@ -162,8 +161,6 @@ public class EditMyGoals extends Activity implements OnItemSelectedListener{
         BMIString = String.valueOf(roundedValue);
 
         myNewCalculatedBMI.setText(BMIString);
-
-        System.out.println("BMI= " + BMIString);
 
         String query = "UPDATE USERS SET BMI = '" + BMIString + "', Weight = '" + userWeight + "' WHERE userid = " + User.UserID;
 
@@ -187,5 +184,10 @@ public class EditMyGoals extends Activity implements OnItemSelectedListener{
             System.out.println("OOPS Something went wrong.");
         }
     }
+
+
+    //Calculate allowed calorie intake based on BMI and goal
+    //Take parameters BMI and goal
+    //going to have to double some functions from both previous functions
 
 }
