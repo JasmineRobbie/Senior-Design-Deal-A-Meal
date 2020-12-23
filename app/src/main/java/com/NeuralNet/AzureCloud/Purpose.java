@@ -19,6 +19,8 @@ import com.teamcarl.prototype.R;
 
 import java.io.FileInputStream;
 import java.sql.ResultSet;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Random;
 import java.util.regex.Pattern;
 
@@ -209,7 +211,15 @@ public class Purpose extends Activity {
 
     public void insertGuideHistory(String userId, String guideId)
     {
+        //Inserting into GuideHistory
+        System.out.println("Inserting into GuideHistory!!");
+
+        DateTimeFormatter dateTime = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        LocalDateTime currentTime = LocalDateTime.now();
+        System.out.println(dateTime.format(currentTime));
+
         DataAccess db = new DataAccess();
+
         String query = "IF NOT EXISTS (\n" +
                 "\tSELECT * \n" +
                 "\tFROM GUIDEHISTORY\n" +
@@ -219,8 +229,9 @@ public class Purpose extends Activity {
                 "BEGIN\n" +
                 "INSERT INTO GUIDEHISTORY\n" +
                 "(GUIDEID, USERID)\n" +
-                "VALUES('" + guideId + "','" + userId + "')" +
+                "VALUES('" + guideId + "','" + userId+ "')" +
                 "END";
+
 
         String result = db.executeNonQuery(query);
         // if no errors during database query

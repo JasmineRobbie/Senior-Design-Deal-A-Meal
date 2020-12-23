@@ -120,19 +120,15 @@ public class MainMenu extends Activity implements Serializable {
     public void getGuideLists() {
         // if user is online/connected to internet
         if (connectionTest()) {
-
+            System.out.println("user.UserID: " + user.UserID);
+            System.out.println("BrandNumber: " + user.BrandNumber);
             DataAccess db = new DataAccess();
             String query =
                     "SELECT g.GuideName, g.GuideId, g.Switch \n" + // query gets guides from brand that user is in
                             "FROM Guide g\n" +
-                            "JOIN [USERS] u ON u.BrandNumber = g.BrandNumber\n" +
-                            "AND u.[userid] = '" + user.UserID + "'\n" +
-                            "UNION\n" + // next query used to get guides that may not be in Brand (from referral)
-                            "SELECT DISTINCT g.GuideName, g.guideId, g.Switch\n" +
-                            "FROM  GUIDEHISTORY gh\n" +
-                            "LEFT JOIN USERS u on gh.userid = u.userid\n" +
-                            "AND u.[userid] = '" + user.UserID + "'\n" +
-                            "JOIN GUIDE g on gh.guideid = g.guideid";
+                            "JOIN USERS u ON u.BrandNumber = g.BrandNumber\n" +
+                            "AND u.UserId = '" + user.UserID + "'\n" +
+                            "AND u.BrandNumber = '" + user.BrandNumber + "'\n" ;
             ResultSet result = db.getDataTable(query);
             if (result != null) {
                 try {

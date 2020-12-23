@@ -16,6 +16,8 @@ import android.widget.Toast;
 import com.teamcarl.prototype.R;
 
 import java.sql.ResultSet;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class FinalEvaluation extends Activity {
 
@@ -185,6 +187,8 @@ public class FinalEvaluation extends Activity {
 
     public void insertGuideHistory(String userId, String guideId)
     {
+        System.out.println("Inserting into GuideHistory in Final Evaluation!!");
+
         DataAccess db = new DataAccess();
         String query = "IF NOT EXISTS (\n" +
                 "\tSELECT * \n" +

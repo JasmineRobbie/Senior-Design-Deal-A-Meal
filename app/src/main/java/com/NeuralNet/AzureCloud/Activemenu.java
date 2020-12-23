@@ -80,7 +80,7 @@ public class Activemenu extends Activity {
         // setup buttons on activity
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) { //Guide Evaluation
                 //Added by Rhagavi for testing purpose
                 System.out.println("Exit");
                 Intent intent;
@@ -132,7 +132,7 @@ public class Activemenu extends Activity {
         DatabaseHelper.setUser(user);
         useactive.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) { // Use Active Guide
                 //Added by Rhagavi
                 System.out.println("Testing by  Rhagavi");
                 // user already logged into the system (has preferences values)
@@ -159,10 +159,12 @@ public class Activemenu extends Activity {
                     }
                     if(switchflag)
                     {
+                        System.out.println("Going to open the Question.java");
                         Intent intent = new Intent(Activemenu.this, Question.class);
                         startActivity(intent);
                     }
                     else {
+                        System.out.println("Going to open the Purpose.java");
                         Intent intent = new Intent(Activemenu.this, Purpose.class);
                         intent.putExtra("User", user);
                         intent.putExtra("guideId", activeGuideId);
@@ -177,7 +179,7 @@ public class Activemenu extends Activity {
         });
         newguide.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) { // Guide Selection
                 //Added by Rhagavi
                 System.out.println("Clicked on NewGuide");
 
@@ -189,7 +191,7 @@ public class Activemenu extends Activity {
         // opens memo button activity
         checkmemos.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) { //Check memos
                 //Added by Rhagavi
                 System.out.println("Clicked on CheckMemos");
 
