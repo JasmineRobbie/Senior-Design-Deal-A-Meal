@@ -32,6 +32,8 @@ public class Point_of_Consumption extends Activity{
     //setting all times to false unless otherwise clicked by user
     boolean breakfast = false, lunch = false, dinner = false, snacks = false, xtras = false;
 
+    String UserId = User.UserID;
+
     //Adding all food drawable images in an array
     int[] myImageList = new int[]{R.drawable.orangejuice, R.drawable.englishmuffin, R.drawable.taco,
             R.drawable.roastbeef, R.drawable.snickers, R.drawable.sandwich};
@@ -212,7 +214,9 @@ public class Point_of_Consumption extends Activity{
 
                 Toast.makeText(getApplicationContext(), "Consumed Btn Clicked", Toast.LENGTH_SHORT).show();
 
-                String query = "INSERT INTO EatenMeals(description, Units_Calories, Units_Protein, Units_Fat, Units_SatFat, Units_Carbs, Units_Sugar, BLDSX, servingAmount) VALUES ('" + descriptionObject + "','" + caloriesObject + "', '" + proteinObject + "', '" + fatObject + "', '" + sat_fatObject + "', '" + carbsObject + "', '" + sugarObject + "', '" + BLDSXObject + "', '" + finalServingAmountObject + "') ;\n" ;
+                String query = "INSERT INTO EatenMeals(description, Units_Calories, Units_Protein, Units_Fat, Units_SatFat, Units_Carbs, Units_Sugar, BLDSX, servingAmount, UserId)" +
+                        " VALUES ('" + descriptionObject + "','" + caloriesObject + "', '" + proteinObject + "', '" + fatObject + "', '" + sat_fatObject + "', '" + carbsObject
+                        + "', '" + sugarObject + "', '" + BLDSXObject + "', '" + finalServingAmountObject + "', '" + UserId + "') ;\n" ;
 
                 db.executeNonQuery(query);
                 System.out.println("Entered eaten meal to database");

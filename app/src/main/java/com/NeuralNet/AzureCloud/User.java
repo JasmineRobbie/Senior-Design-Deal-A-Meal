@@ -25,9 +25,17 @@ public class User implements Serializable {
     public static String BrandName;
     public static String Email;
     public static String PhoneNumber;
+    public static String Country;
     public static String State;
     public static String City;
     public static String Street;
+    //newly added
+    public static String BMI;
+    public static String Weight;
+    public static String Goal;
+    public static String Guide;
+    public static String AllowedCalories;
+
 
     public boolean isAnonymous;
 
@@ -48,7 +56,19 @@ public class User implements Serializable {
                     "SELECT ISNULL(Permissions,''), ISNULL(Email,''), StayAnonymous, ISNULL(FirstName,''), ISNULL(LastName,''), ISNULL(b.BrandId,'')\n" +
                     ", ISNULL(b.BrandName,'')\n" +
                     ", ISNULL(b.BrandLink,'')\n" +
-                    // ", ISNULL(b.PhoneNumber,'')\n" +
+                    ", ISNULL(PhoneNumber,'')\n" +
+                    ", ISNULL(Country,'')\n" +
+                    ", ISNULL(State,'')\n" +
+                    ", ISNULL(City,'')\n" +
+                    ", ISNULL(StreetAddress,'')\n" +
+                    ", ISNULL(Password,'')\n" +
+                    //newly added
+                    ", ISNULL(BMI,'')\n" +
+                    ", ISNULL(Weight,'')\n" +
+                    ", ISNULL(Goal,'')\n" +
+                    ", ISNULL(Guide,'')\n" +
+                    ", ISNULL(AllowedCalories,'')\n" +
+
                     "FROM USERS u\n" +
                     "JOIN BRAND b ON u.brandNumber = b.brandId\n" +
                     "WHERE userid = '" + UserID + "'";
@@ -62,7 +82,18 @@ public class User implements Serializable {
                 BrandNumber = result.getString(6);
                 BrandName = result.getString(7);
                 BrandLink = result.getString(8);
-                //   PhoneNumber = result.getString(9);
+                PhoneNumber = result.getString(9);
+                Country = result.getString(10);
+                State = result.getString(11);
+                City = result.getString(12);
+                Street = result.getString(13);
+                Password = result.getString(14);
+                //Nely added
+                BMI = result.getString(15);
+                Weight = result.getString(16);
+                Goal = result.getString(17);
+                Guide = result.getString(18);
+                AllowedCalories = result.getString(19);
             }
         }
         catch(Exception e)
