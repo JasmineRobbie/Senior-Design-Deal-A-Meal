@@ -34,7 +34,9 @@ public class MainMenu extends Activity implements Serializable {
     User user;
     String guideName;
     String guideId;
-
+    int ActiveGuide; // added to figure out the ActiveGuide
+    String guidePurpose; //added to try to pass the purpose of the guide
+    InternalDataAccess internalData = new InternalDataAccess(); //added to update guide & purpose
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -69,6 +71,53 @@ public class MainMenu extends Activity implements Serializable {
                 Intent intent = new Intent(MainMenu.this, Purpose.class);
                 guideName = guides.get(position);
                 guideId = guideIds.get(position);
+                //Testing to check if it displays the Active Guide, Brand Number, Brand link and User Id
+                System.out.println("User Id: " + user.UserID);
+                System.out.println("Brand Number: " + user.BrandNumber);
+                System.out.println("Brand Link: " + user.BrandLink);
+                System.out.println("Brand Name: " + user.BrandName);
+                System.out.println("guideId: " + guideId);
+                System.out.println("guideName: " + guideName);
+                DataAccess db = new DataAccess();
+                // Now let's find the Guide Purpose
+                String queryPurposeGuide = "SELECT Purpose \n" +
+                        "FROM Guide \n" +
+                        "WHERE GuideID = '" + guideId + "'";
+                ResultSet purposeGuideResult = db.getDataTable(queryPurposeGuide);
+                try{
+                    while(purposeGuideResult.next()){
+                        guidePurpose = purposeGuideResult.getString(1);
+                    }
+                }catch(Exception e){
+                    Toast.makeText(getApplicationContext(), "error to get the Guide Purpose", Toast.LENGTH_SHORT).show();
+                }
+                System.out.println("Guide Purpose: " + guidePurpose);
+                //end of finding out for Guide Purpose
+                //Let's try to find the ActiveGuide Value
+                String queryActiveGuide = "SELECT ActiveGuide \n" +
+                        "FROM brand \n" +
+                        "WHERE BrandId = '" + user.BrandNumber + "'";
+                ResultSet activeGuideResult = db.getDataTable(queryActiveGuide);
+                try{
+                    while(activeGuideResult.next()){
+                        ActiveGuide = activeGuideResult.getInt(1);
+                    }
+                }catch(Exception e){
+                    Toast.makeText(getApplicationContext(), "error to calculate for ActiveGuide #", Toast.LENGTH_SHORT).show();
+                }
+                System.out.println("ActiveGuide #: " + ActiveGuide);
+                //end of finding ActiveGuide Value
+
+                //Let's try going back to the Activemenu page without crashing
+                //Before that, let's save the guide info (and the purpose) using internal data
+                internalData.savePreferencesValue(getApplicationContext(),"active_guide_purpose",guidePurpose);
+                internalData.savePreferencesValue(getApplicationContext(),"active_guide_title", guideName);
+                internalData.savePreferencesValue(getApplicationContext(), "active_guide_id", guideId);
+                Intent returnHome = new Intent(MainMenu.this, Activemenu.class);
+                startActivity(returnHome);
+
+                //The following lines are commented for now which deals with the survey page
+                /*
                 if(switches.get(position) == 1)
                 {
                     Intent montIntent = new Intent(MainMenu.this, SurveyPage.class);
@@ -82,9 +131,11 @@ public class MainMenu extends Activity implements Serializable {
                     intent.putExtra("guideName", guideName);
                     intent.putExtra("guideId", guideId);
                     intent.putExtra("User", user);
+                    //Adding
+                    //intent.putExtra("");
                     startActivity(intent);
                 }
-
+                */
             }
         });
 
