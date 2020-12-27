@@ -55,7 +55,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="148dp"
         android:layout_marginLeft="148dp"
-        android:layout_marginTop="272dp"
+        android:layout_marginTop="266dp"
         android:text="Calculate"
         android:textSize="60px" />
 
@@ -73,19 +73,6 @@
         android:textSize="60px" />
 
     <TextView
-        android:id="@+id/allowedCalories"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="19dp"
-        android:layout_marginLeft="19dp"
-        android:layout_marginTop="532dp"
-        android:text="Allowed Calories: "
-        android:textSize="60px" />
-
-    <TextView
         android:id="@+id/allowedCaloriesUpdatedText"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
@@ -94,8 +81,21 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="252dp"
         android:layout_marginLeft="252dp"
-        android:layout_marginTop="531dp"
+        android:layout_marginTop="580dp"
         android:text=" "
+        android:textSize="60px" />
+
+    <TextView
+        android:id="@+id/allowedCalories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="19dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginTop="579dp"
+        android:text="Allowed Calories: "
         android:textSize="60px" />
 
     <EditText
@@ -109,6 +109,19 @@
         android:layout_marginLeft="221dp"
         android:layout_marginTop="146dp"
         android:hint="Enter Weight"
+        android:textSize="60px" />
+
+    <EditText
+        android:id="@+id/myAgeInput"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="253dp"
+        android:layout_marginLeft="253dp"
+        android:layout_marginTop="535dp"
+        android:hint="Enter Age"
         android:textSize="60px" />
 
     <TextView
@@ -172,30 +185,16 @@
         android:layout_marginLeft="285dp"
         android:layout_marginTop="213dp" />
 
-    <TextView
-        android:id="@+id/myBMI"
-        android:layout_width="wrap_content"
+    <Spinner
+        android:id="@+id/chooseGenderInput"
+        android:layout_width="184dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="75dp"
-        android:layout_marginLeft="75dp"
-        android:layout_marginTop="359dp"
-        android:text="My BMI: "
-        android:textSize="60px" />
-
-    <TextView
-        android:id="@+id/chooseGoalText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="470dp"
-        android:text="Choose Goal: "
+        android:layout_marginStart="199dp"
+        android:layout_marginLeft="199dp"
+        android:layout_marginTop="488dp"
         android:textSize="60px" />
 
     <Spinner
@@ -205,9 +204,48 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="204dp"
-        android:layout_marginLeft="204dp"
-        android:layout_marginTop="465dp"
+        android:layout_marginStart="201dp"
+        android:layout_marginLeft="201dp"
+        android:layout_marginTop="433dp"
+        android:textSize="60px" />
+
+    <TextView
+        android:id="@+id/editMyGoalsGenderText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="21dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="487dp"
+        android:text="Gender: "
+        android:textSize="60px" />
+
+    <TextView
+        android:id="@+id/editMyGoalsAgeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="531dp"
+        android:text="Age: "
+        android:textSize="60px" />
+
+    <TextView
+        android:id="@+id/chooseGoalText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="21dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="438dp"
+        android:text="Choose Goal: "
         android:textSize="60px" />
 
     <EditText
@@ -217,11 +255,24 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="230dp"
-        android:layout_marginLeft="230dp"
-        android:layout_marginTop="355dp"
+        android:layout_marginStart="231dp"
+        android:layout_marginLeft="231dp"
+        android:layout_marginTop="335dp"
         android:hint="Enter BMI"
         android:text=" "
+        android:textSize="60px" />
+
+    <TextView
+        android:id="@+id/myBMI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="76dp"
+        android:layout_marginLeft="76dp"
+        android:layout_marginTop="339dp"
+        android:text="My BMI: "
         android:textSize="60px" />
 
     <Button
