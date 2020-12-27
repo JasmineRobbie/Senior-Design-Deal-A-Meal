@@ -7,7 +7,7 @@ import android.widget.Button;
 import com.teamcarl.prototype.R;
 
 public class UserProfile extends Activity {
-    Button aboutMeBtn, myGoalsBtn, profileHelpBtn, profileReturnBtn, profileMemoBtn;
+    Button aboutMeBtn, myGoalsBtn, profileHelpBtn, profileReturnBtn, profileMemoBtn, resetPlan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +17,8 @@ public class UserProfile extends Activity {
         profileReturnBtn = findViewById(R.id.profileReturnBtn);
         aboutMeBtn = findViewById(R.id.aboutMeBtn);
         myGoalsBtn = findViewById(R.id.myGoalsBtn);
+
+        resetPlan = findViewById(R.id.resetPlanBtn);
 
         //about me button
         aboutMeBtn.setOnClickListener(new View.OnClickListener() {
@@ -41,6 +43,16 @@ public class UserProfile extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(UserProfile.this, MyGoals.class);
+                startActivity(intent);
+            }
+        });
+
+
+        resetPlan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UserProfile.this, ResetPlan.class);
+
                 startActivity(intent);
             }
         });
