@@ -32,9 +32,17 @@ public class Activemenu extends Activity {
     String activeGuideId;
     TextView brandName, guideTitle, guidePurpose;
     InternalDataAccess ida = new InternalDataAccess();
+    InternalDataAccess internalData = new InternalDataAccess(); //added to update guide & purpose for use default active guide
     String sBrandName, sGuideTitle, sGuidePurpose;
     Random r = new Random();
     int evaluation;
+    //Default Active Guide
+    List<String> guideIds = new ArrayList<>();
+    //User user2;
+    String guideName;
+    String guideId;
+    int ActiveGuide; // added to figure out the ActiveGuide
+    String guidePurpose2; //added to try to pass the purpose of the guide
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -145,6 +153,9 @@ public class Activemenu extends Activity {
                 if (!activeGuideId.isEmpty()) {
                     boolean switchflag = false;
                     DataAccess db = new DataAccess();
+                    //Going to comment on the following lines of code as we did
+                    //not yet discussed about Question & purpose
+                    /*
                     String checkDBForSwitch = "select Switch from Guide where GuideId = '" + activeGuideId + "'";
                     ResultSet rs = db.getDataTable(checkDBForSwitch);
                     try{
@@ -157,19 +168,97 @@ public class Activemenu extends Activity {
                     catch(Exception e){
                         System.out.println(e);
                     }
-                    if(switchflag)
-                    {
-                        System.out.println("Going to open the Question.java");
+                    */
+                    //Let's ignore this part.
+                   // if(switchflag)
+                   // {
+                       // System.out.println("Going to open the Question.java");
+                       // Toast.makeText(getApplicationContext(), "Going to Question.", Toast.LENGTH_SHORT).show();
+                        //Let's try commenting the Purpose for now
+                        /*
                         Intent intent = new Intent(Activemenu.this, Question.class);
                         startActivity(intent);
-                    }
-                    else {
-                        System.out.println("Going to open the Purpose.java");
+                        */
+                  //  }
+
+                   // else {
+                      //  System.out.println("Going to open the Purpose.java");
+                       // Toast.makeText(getApplicationContext(), "Going to Purpose.", Toast.LENGTH_SHORT).show();
+                        //Let's try commenting the Purpose for now
+                        /*
                         Intent intent = new Intent(Activemenu.this, Purpose.class);
                         intent.putExtra("User", user);
                         intent.putExtra("guideId", activeGuideId);
                         startActivity(intent);
+                        */
+                   // }
+
+                    //Implement the part where it allows the user to change the default active guide
+                    // and to automatically display the default active guide
+
+                    //Let's start with getting the list of guides
+                   // DataAccess db2 = new DataAccess();
+                    String query =
+                            "SELECT  g.GuideId \n" + // query gets guides from brand that user is in
+                                    "FROM Guide g\n" +
+                                    "JOIN USERS u ON u.BrandNumber = g.BrandNumber\n" +
+                                    "AND u.UserId = '" + user.UserID + "'\n" +
+                                    "AND u.BrandNumber = '" + user.BrandNumber + "'\n" ;
+                    ResultSet result = db.getDataTable(query);
+                    if (result != null) {
+                        try {
+                            while (result.next()) // loop through each row (first row is always empty/null, so we do next() right away)
+                            {
+                                guideIds.add(result.getString(1));
+
+                            }
+                        } catch (Exception e) {
+                            Toast.makeText(getApplicationContext(), "Error getting  Guides", Toast.LENGTH_SHORT).show();
+                        }
+
                     }
+                    else{
+                        //add error message
+                        Toast.makeText(getApplicationContext(), "Issues getting  Guides", Toast.LENGTH_SHORT).show();
+                    }
+                    //Next, use random to get guide Id
+                    //Before that, check the size of guideIds
+                    System.out.println("Size of guideIds: " + guideIds.size());
+                    Random randomPosition = new Random();
+                    int guideListSize = guideIds.size();
+                    int randomGuidePos = randomPosition.nextInt(guideListSize);
+                    //Check if the random guide position works
+                    System.out.println("randomGuidePos: " + randomGuidePos);
+
+                    //Now time to get the guide Id using the position from the arraylist
+                    guideId = guideIds.get(randomGuidePos);
+
+                    //Now using guideId to find Guide Name and Guide Purpose
+                    // Now let's find the Guide Purpose && Guide Name
+                    String queryPurposeGuide = "SELECT Purpose, GuideName \n" +
+                            "FROM Guide \n" +
+                            "WHERE GuideID = '" + guideId + "'";
+                    ResultSet purposeGuideResult = db.getDataTable(queryPurposeGuide);
+                    try{
+                        while(purposeGuideResult.next()){
+                            guidePurpose2 = purposeGuideResult.getString(1);
+                            guideName = purposeGuideResult.getString(2);
+                        }
+                    }catch(Exception e){
+                        Toast.makeText(getApplicationContext(), "error to get the Guide Purpose", Toast.LENGTH_SHORT).show();
+                    }
+                    System.out.println("Guide Purpose: " + guidePurpose2);
+                    System.out.println("Guide Name: " + guideName);
+                    System.out.println("Guide ID: " + guideId);
+                    //end of finding out for Guide Purpose && Guide Name
+
+                    //Let's try refreshing the Activemenu page without crashing
+                    //Before that, let's save the guide info (and the purpose) using internal data
+                    internalData.savePreferencesValue(getApplicationContext(),"active_guide_purpose",guidePurpose2);
+                    internalData.savePreferencesValue(getApplicationContext(),"active_guide_title", guideName);
+                    internalData.savePreferencesValue(getApplicationContext(), "active_guide_id", guideId);
+                    Intent refreshHome = new Intent(Activemenu.this, Activemenu.class);
+                    startActivity(refreshHome);
                 }
                 else // no active guides
                 {

@@ -116,6 +116,7 @@ public class MainMenu extends Activity implements Serializable {
                 Intent returnHome = new Intent(MainMenu.this, Activemenu.class);
                 startActivity(returnHome);
 
+                //Note: Switches is currently on comment as of now
                 //The following lines are commented for now which deals with the survey page
                 /*
                 if(switches.get(position) == 1)
