@@ -264,7 +264,7 @@ public class EditMyGoals extends Activity implements OnItemSelectedListener{
 
         allowedCaloriesUpdatedText.setText(AllowedCalories);
 
-        String query = "UPDATE USERS SET AllowedCalories = '" + AllowedCalories + "' WHERE userid = " + User.UserID;
+        String query = "UPDATE USERS SET AllowedCalories = '" + AllowedCalories + "', Goal = '" + goal + "' WHERE userid = " + User.UserID;
 
         try {
             db.executeNonQuery(query);
