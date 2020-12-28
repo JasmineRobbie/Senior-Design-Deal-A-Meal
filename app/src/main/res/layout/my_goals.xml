@@ -98,6 +98,19 @@
         android:textSize="60px" />
 
     <TextView
+        android:id="@+id/AllergiesText"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="242dp"
+        android:layout_marginLeft="242dp"
+        android:layout_marginTop="444dp"
+        android:text=" "
+        android:textSize="60px" />
+
+    <TextView
         android:id="@+id/myBMI"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -121,6 +134,19 @@
         android:layout_marginLeft="12dp"
         android:layout_marginTop="376dp"
         android:text="Allowed Calories: "
+        android:textSize="60px" />
+
+    <TextView
+        android:id="@+id/AllergiesTextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="443dp"
+        android:text="Allergies: "
         android:textSize="60px" />
 
     <Button

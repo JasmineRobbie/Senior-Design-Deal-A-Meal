@@ -90,7 +90,7 @@ public class EditMyGoals extends Activity implements OnItemSelectedListener{
         gender.add("Male");
         gender.add("Female");
 
-        allergies.add("Peanuts");
+        allergies.add("Nut");
         allergies.add("Lactose");
         allergies.add("Fish");
         allergies.add("ShellFish");

@@ -13,13 +13,13 @@ import java.sql.ResultSet;
 public class MyGoals extends Activity{
     Button myGoalsReturnButton, goalsEditButton;
 
-    TextView myWeightText, myBMIText, myGoalText, allowedCaloriesText;
+    TextView myWeightText, myBMIText, myGoalText, allowedCaloriesText, AllergiesText;
 
     String Userid = User.UserID;
 
     //Accessing database and selecting information (selecting specific user logged in Userid)
     DataAccess db = new DataAccess();
-    final ResultSet rs = db.getDataTable("SELECT BMI, Weight, Goal, Guide, AllowedCalories FROM Users WHERE UserId = " + Userid);
+    final ResultSet rs = db.getDataTable("SELECT BMI, Weight, Goal, Guide, AllowedCalories, Allergies FROM Users WHERE UserId = " + Userid);
 
 
     @Override
@@ -33,6 +33,7 @@ public class MyGoals extends Activity{
         myBMIText = findViewById(R.id.myBMIText);
         myGoalText = findViewById(R.id.myGoalText);
         allowedCaloriesText = findViewById(R.id.allowedCaloriesText);
+        AllergiesText = findViewById(R.id.AllergiesText);
 
         try {
             System.out.println(rs);
@@ -90,6 +91,13 @@ public class MyGoals extends Activity{
         }
         else{
             allowedCaloriesText.setText(User.AllowedCalories);
+        }
+
+        if(User.Allergies.isEmpty()){
+            AllergiesText.setText("N/A");
+        }
+        else{
+            AllergiesText.setText(User.Allergies);
         }
 
     }
