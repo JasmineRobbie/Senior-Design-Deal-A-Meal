@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.NeuralNet.AzureCloud.DealAMealList"
-    android:background="@drawable/menudeal">
+    android:background="@drawable/menudeal"
+    >
 
 
     <Button
@@ -67,6 +68,15 @@
         android:layout_marginEnd="51dp"
         android:layout_marginRight="51dp"
         android:layout_marginBottom="205dp" />
+
+    <Button
+        android:id="@+id/helpBtn"
+        android:layout_width="84dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="43dp"
+        android:layout_marginBottom="4dp" />
 
 
 </RelativeLayout>

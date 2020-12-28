@@ -3,6 +3,9 @@ package com.NeuralNet.AzureCloud;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -18,7 +21,7 @@ import java.sql.ResultSet;
 
 public class FourWeekPlan extends Activity {
 
-    Button previousDayBtn, nextDayBtn, eraseButton;
+    Button previousDayBtn, nextDayBtn, eraseButton, memoButton, helpButton;
     ViewFlipper viewFlipper;
 
     ImageView hourOne, hourTwo, hourThree, hourFour, hourFive, hourSix, hourSeven, hourEight,hourNine,hourTen, hourEleven, hourTwelve;
@@ -30,6 +33,9 @@ public class FourWeekPlan extends Activity {
     TextView textPurpose, hourSelector, mealOne,mealTwo,mealThree,mealFour,mealFive;
 
     Button hourUp, hourDown, enterButton;
+
+    //GITHUB TEST SAMANTHA
+    //GITHUB TEST 2
 
     String weekDays[] = {"Sunday", "Monday", "Tuesday","Wednesday", "Thursday", "Friday", "Saturday"};
     int currentDayOfTheWeek = 1;
@@ -48,6 +54,27 @@ public class FourWeekPlan extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_four_week_plan);
 
+        AlertDialog.Builder b1 = new AlertDialog.Builder(FourWeekPlan.this);
+        b1.setTitle("Help");
+        b1.setMessage("The Four Week Plan page is where you will be able to view all of your consumed meals for " +
+                "the day. You can see what you've eaten for breakfast, lunch, dinner, snacks and extras. You can" +
+                "change the day of the week on the top left corner with the arrows. Your eaten meals along with" +
+                "the time you consumed them will highlight in its coordinated color on one of the time slots on the " +
+                "left side of the screen. You can also view your meal tickets for the day as well as write notes" +
+                "in a large text box in the center.");
+        b1.setCancelable(true);
+        b1.setPositiveButton(
+                "Ok",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                }
+        );
+        final AlertDialog alertdup = b1.create();
+        //alert dialog
+
 
         viewFlipper = (ViewFlipper) findViewById(R.id.viewFlipper);
         previousDayBtn = (Button) findViewById(R.id.previousDayBtn);
@@ -65,6 +92,8 @@ public class FourWeekPlan extends Activity {
         hourTen = findViewById(R.id.hourTen);
         hourEleven = findViewById(R.id.hourEleven);
         hourTwelve = findViewById(R.id.hourTwelve);
+        memoButton = findViewById(R.id.memoBtn);
+        helpButton = findViewById(R.id.helpBtn);
 
         //Afternoon timeslots
 
@@ -281,6 +310,13 @@ public class FourWeekPlan extends Activity {
             }
         });
 
+        helpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alertdup.show();
+            }
+        });
+
         offTheGridButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -294,6 +330,21 @@ public class FourWeekPlan extends Activity {
                 selectedMealTime = "offTheGrid";
             }
         });
+
+        memoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openMessagesPage();
+            }
+        });
+
+        helpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alertdup.show();
+            }
+        });
+
 
 
         enterButton.setOnClickListener(new View.OnClickListener() {
@@ -454,7 +505,7 @@ public class FourWeekPlan extends Activity {
 
                     }
 
-                    }else if(selectedMealTime.equals("dinner")){
+                }else if(selectedMealTime.equals("dinner")){
                     switch(chosenHourInt){
                         case 1:
                             hourOne.setBackgroundColor(Color.YELLOW);
@@ -870,6 +921,13 @@ public class FourWeekPlan extends Activity {
         });
 
 
+    }
+
+
+    public void openMessagesPage(){
+        Intent intent = new Intent(FourWeekPlan.this, NewMessage.class);
+
+        startActivity(intent);
 
     }
 
@@ -998,4 +1056,5 @@ public class FourWeekPlan extends Activity {
         hourTwelveMN.setBackgroundResource(0);
 
     }
+
 }

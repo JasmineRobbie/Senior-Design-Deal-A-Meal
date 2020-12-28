@@ -1,5 +1,7 @@
 package com.NeuralNet.AzureCloud;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -15,7 +17,7 @@ import java.sql.ResultSet;
 public class EditUserInfo extends Activity {
     EditText editPassword, editFirstName, editLastName, editEmail, editPhone,
             editState, editCity, editStreet, editCountry;
-    Button editUserReturnBtn, submitUserInfoBtn;
+    Button editUserReturnBtn, submitUserInfoBtn, helpButton;
 
     DataAccess db = new DataAccess();
 
@@ -23,6 +25,24 @@ public class EditUserInfo extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.edit_user_info);
+
+        AlertDialog.Builder b1 = new AlertDialog.Builder(EditUserInfo.this);
+        b1.setTitle("Help");
+        b1.setMessage("Here you will view your personal information. You are able to change" +
+                "and update the information displayed if you choose. Just click on the text box" +
+                "to make changes.");
+        b1.setCancelable(true);
+        b1.setPositiveButton(
+                "Ok",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                }
+        );
+        final AlertDialog alertdup = b1.create();
+        //alert dialog
 
         editUserReturnBtn = findViewById(R.id.editUserReturnBtn);
         submitUserInfoBtn = findViewById(R.id.submitUserInfoBtn);
@@ -35,6 +55,7 @@ public class EditUserInfo extends Activity {
         editState = findViewById(R.id.editState);
         editCity = findViewById(R.id.editCity);
         editStreet = findViewById(R.id.editStreet);
+        helpButton = findViewById(R.id.helpBtn);
 
         //Return button
         editUserReturnBtn.setOnClickListener(new View.OnClickListener() {
@@ -59,6 +80,13 @@ public class EditUserInfo extends Activity {
                 submitNewCity();
                 submitNewStreet();
                 Toast.makeText(getApplicationContext(), "Submitted", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        helpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alertdup.show();
             }
         });
     }

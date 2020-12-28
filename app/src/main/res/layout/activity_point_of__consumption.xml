@@ -287,18 +287,6 @@
         android:layout_marginLeft="45dp"
         android:layout_marginBottom="38dp" />
 
-    <Button
-        android:id="@+id/helpButton"
-        android:layout_width="wrap_content"
-        android:layout_height="22dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="696dp"
-        android:layout_marginEnd="271dp"
-        android:layout_marginRight="271dp"
-        android:visibility="invisible" />
-
 
     <Button
         android:id="@+id/consumedMealButton"
@@ -312,6 +300,15 @@
         android:layout_marginRight="115dp"
         android:visibility="visible"
         />
+
+    <Button
+        android:id="@+id/helpBtn"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="64dp"
+        android:layout_marginBottom="1dp" />
 
 
 </RelativeLayout>

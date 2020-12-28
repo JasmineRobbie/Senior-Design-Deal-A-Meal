@@ -1,12 +1,9 @@
 package com.NeuralNet.AzureCloud;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -15,8 +12,6 @@ import android.widget.Toast;
 
 import com.teamcarl.prototype.R;
 
-import java.sql.ResultSetMetaData;
-import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.sql.ResultSet;
@@ -56,6 +51,26 @@ public class Point_of_Consumption extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_point_of__consumption);
 
+        AlertDialog.Builder b1 = new AlertDialog.Builder(Point_of_Consumption.this);
+        b1.setTitle("Help");
+        b1.setMessage("In this page, you will input the current meal you are consuming. You will begin by selecting" +
+                "your meal and inputting the calories, protein, saturated fat, carbs and sugar." +
+                "You will then select if this meal is being eaten for breakfast, lunch, dinner, etc." +
+                "You are also required to put in the amount of servings for it. Once you are finished," +
+                " click 'consumed meal'.");
+        b1.setCancelable(true);
+        b1.setPositiveButton(
+                "Ok",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                }
+        );
+        final AlertDialog alertdup = b1.create();
+        //alert dialog
+
         //Declaration of XML variables
         dateID = findViewById(R.id.dateID);
         timeID = findViewById(R.id.timeID);
@@ -65,7 +80,7 @@ public class Point_of_Consumption extends Activity{
         leftButton = findViewById(R.id.leftButton);
         rightButton = findViewById(R.id.rightButton);
         consumedMealButton = findViewById(R.id.consumedMealButton);
-        helpButton = findViewById(R.id.helpButton);
+        helpButton = findViewById(R.id.helpBtn);
         breakfastButton = findViewById(R.id.breakfastButton);
         lunchButton = findViewById(R.id.lunchButton);
         dinnerButton = findViewById(R.id.dinnerButton);
@@ -220,6 +235,13 @@ public class Point_of_Consumption extends Activity{
 
                 db.executeNonQuery(query);
                 System.out.println("Entered eaten meal to database");
+            }
+        });
+
+        helpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alertdup.show();
             }
         });
 

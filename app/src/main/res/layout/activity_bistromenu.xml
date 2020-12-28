@@ -19,4 +19,13 @@
         android:layout_marginRight="78dp"
         android:layout_marginBottom="96dp" />
 
+    <Button
+        android:id="@+id/helpBtn"
+        android:layout_width="84dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="43dp"
+        android:layout_marginBottom="4dp" />
+
 </RelativeLayout>

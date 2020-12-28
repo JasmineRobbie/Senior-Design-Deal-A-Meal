@@ -30,17 +30,6 @@
         android:layout_marginRight="70dp"
         android:layout_marginBottom="423dp"
         android:visibility="visible" />
-    <Button
-        android:id="@+id/profileHelpBtn"
-        android:layout_width="98dp"
-        android:layout_height="36dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="292dp"
-        android:layout_marginRight="292dp"
-        android:layout_marginBottom="13dp"
-        android:visibility="invisible" />
 
     <Button
         android:id="@+id/profileReturnBtn"
@@ -67,14 +56,13 @@
         android:visibility="visible" />
 
     <Button
-        android:id="@+id/resetPlanBtn"
-        android:layout_width="261dp"
-        android:layout_height="73dp"
-        android:layout_above="@+id/profileReturnBtn"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="70dp"
-        android:layout_marginBottom="48dp"
-        android:text="Reset Plan"/>
+        android:id="@+id/helpBtn"
+        android:layout_width="89dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginBottom="4dp" />
 
 
 </RelativeLayout>

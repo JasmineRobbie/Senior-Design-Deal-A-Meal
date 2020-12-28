@@ -1,5 +1,7 @@
 package com.NeuralNet.AzureCloud;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,8 +12,8 @@ import com.teamcarl.prototype.R;
 
 import java.sql.ResultSet;
 
-public class MyGoals extends Activity{
-    Button myGoalsReturnButton, goalsEditButton;
+public class MyGoals extends Activity {
+    Button myGoalsReturnButton, goalsEditButton, helpButton;
 
     TextView myWeightText, myBMIText, myGoalText, allowedCaloriesText;
 
@@ -27,12 +29,31 @@ public class MyGoals extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.my_goals);
 
+        AlertDialog.Builder b1 = new AlertDialog.Builder(MyGoals.this);
+        b1.setTitle("Help");
+        b1.setMessage("In the My Goals page, you will be able to view the health information you" +
+                "inputted in the Edit My Goals Page. Your weight, BMI, current goal and allowed" +
+                "calories will be displayed to you.");
+        b1.setCancelable(true);
+        b1.setPositiveButton(
+                "Ok",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                }
+        );
+        final AlertDialog alertdup = b1.create();
+        //alert dialog
+
         myGoalsReturnButton = findViewById(R.id.myGoalsReturnButton);
         goalsEditButton = findViewById(R.id.goalsEditButton);
         myWeightText = findViewById(R.id.myWeightText);
         myBMIText = findViewById(R.id.myBMIText);
         myGoalText = findViewById(R.id.myGoalText);
         allowedCaloriesText = findViewById(R.id.allowedCaloriesText);
+        helpButton = findViewById(R.id.helpBtn);
 
         try {
             System.out.println(rs);
@@ -55,6 +76,13 @@ public class MyGoals extends Activity{
             public void onClick(View view) {
                 Intent intent = new Intent(MyGoals.this, EditMyGoals.class);
                 startActivity(intent);
+            }
+        });
+
+        helpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alertdup.show();
             }
         });
 

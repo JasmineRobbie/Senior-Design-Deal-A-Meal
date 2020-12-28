@@ -498,5 +498,22 @@
         android:layout_marginBottom="110dp"
         android:background="@android:color/white"></EditText>
 
+    <Button
+        android:id="@+id/helpBtn"
+        android:layout_width="49dp"
+        android:layout_height="33dp"
+        android:layout_alignParentRight="true"
+        android:text="Help"
+        android:textSize="8sp" />
+
+    <Button
+        android:id="@+id/memoBtn"
+        android:layout_width="54dp"
+        android:layout_height="22dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="141dp" />
+
 
 </RelativeLayout>
