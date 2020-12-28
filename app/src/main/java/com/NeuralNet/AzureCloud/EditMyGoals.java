@@ -24,7 +24,7 @@ import android.widget.Toast;
 public class EditMyGoals extends Activity implements OnItemSelectedListener{
     //Accessing database and selecting information
     DataAccess db = new DataAccess();
-    String BMIString, AllowedCalories;
+    String BMIString, AllowedCalories, userAllergy;
 
     Button editMyGoalsReturnBtn, calculateBMIbtn, goalsEditSubmitBtn;
     EditText myWeightEditInput, myAgeInput;
@@ -131,6 +131,7 @@ public class EditMyGoals extends Activity implements OnItemSelectedListener{
             @Override
             public void onClick(View view) {
                 setNewGoal();
+                setNewAllergy();
                 Toast.makeText(getApplicationContext(), "Submitted", Toast.LENGTH_SHORT).show();
             }
         });
@@ -276,6 +277,20 @@ public class EditMyGoals extends Activity implements OnItemSelectedListener{
         allowedCaloriesUpdatedText.setText(AllowedCalories);
 
         String query = "UPDATE USERS SET AllowedCalories = '" + AllowedCalories + "', Goal = '" + goal + "' WHERE userid = " + User.UserID;
+
+        try {
+            db.executeNonQuery(query);
+        } catch (Exception e) {
+            System.out.println("OOPS Something went wrong.");
+        }
+    }
+
+    public void setNewAllergy(){
+        System.out.print("SETTING NEW ALLERGY");
+
+        userAllergy = chooseAllergiesInput.getSelectedItem().toString();
+
+        String query = "UPDATE USERS SET Allergies = '" + userAllergy  + "' WHERE userid = " + User.UserID;
 
         try {
             db.executeNonQuery(query);
