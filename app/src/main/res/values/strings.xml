@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">AGI cloud</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="body_for_the_message">Body for the message</string>=
+    <string name="title_activity_purpose">Purpose</string>
+    <string name="title_activity_final__referal">Final_Referal</string>
+    <string name="title_activity_activemenu">Activemenu</string>
+    <string name="priorityText">Priority: 0</string>
+    <string name="currentDay">Monday</string>
+    <string name="currentTask">Water the dog</string>
+    <string name="currentTaskNotes">Notes</string>
+    <string name="selectedDate">Date: 8/23/2019</string>
+</resources>

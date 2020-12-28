@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.NeuralNet.AzureCloud.DealAMealList"
+    android:background="@drawable/menudeal"
+    >
+
+
+    <Button
+        android:id="@+id/userProfileButton"
+        android:layout_width="259dp"
+        android:layout_height="65dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="82dp"
+        android:layout_marginRight="82dp"
+        android:layout_marginBottom="528dp"
+        android:visibility="visible"/>
+
+
+    <Button
+        android:id="@+id/sevenDayScheduleButton"
+        android:layout_width="259dp"
+        android:layout_height="65dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="84dp"
+        android:layout_marginRight="84dp"
+        android:layout_marginBottom="425dp"
+        android:visibility="invisible"/>
+
+    <Button
+        android:id="@+id/fourWeekTemplateButton"
+        android:layout_width="294dp"
+        android:layout_height="104dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="49dp"
+        android:layout_marginRight="49dp"
+        android:layout_marginBottom="327dp" />
+
+
+    <Button
+        android:id="@+id/myProgressButton"
+        android:layout_width="259dp"
+        android:layout_height="65dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="79dp"
+        android:layout_marginRight="79dp"
+        android:layout_marginBottom="103dp"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/cuisineButtonOne"
+        android:layout_width="276dp"
+        android:layout_height="105dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="51dp"
+        android:layout_marginRight="51dp"
+        android:layout_marginBottom="205dp" />
+
+    <Button
+        android:id="@+id/helpBtn"
+        android:layout_width="84dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="43dp"
+        android:layout_marginBottom="4dp" />
+
+
+</RelativeLayout>

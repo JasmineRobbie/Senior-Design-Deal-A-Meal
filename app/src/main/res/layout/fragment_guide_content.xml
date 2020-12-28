@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context="com.teamcarl.prototype.com.NeuralNet.prototype.Guide"
+    android:background="@drawable/wood"
+    android:screenOrientation="portrait"
+    android:nestedScrollingEnabled="true">
+
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/aim_prompter"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/text_questionNum"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textSize="14dp"
+            android:textStyle="normal|bold"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:textColor="#000000"
+            android:layout_marginTop="8dp"
+            android:paddingLeft="25dp" />
+
+        <TextView style="?android:textAppearanceMedium"
+            android:lineSpacingMultiplier="1.2"
+            android:layout_width="306dp"
+            android:layout_height="135dp"
+            android:id="@+id/questionLabel"
+            android:text="Question Text"
+            android:layout_above="@+id/response"
+            android:layout_below="@+id/text_questionNum"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_columnSpan="3"
+            android:layout_marginTop="35dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="40dp" />
+
+
+        <ImageButton
+            android:text="Back"
+            android:layout_width="80dp"
+            android:layout_height="109dp"
+            android:id="@+id/btn_question_back"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@+id/btn_question_next"
+            android:background="@drawable/back"
+            android:layout_alignRight="@+id/response"
+            android:layout_alignEnd="@+id/response"
+            android:layout_alignTop="@+id/btn_question_next"
+            android:layout_alignBottom="@+id/btn_question_next"
+            android:layout_toLeftOf="@+id/btn_question_next"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:layout_gravity="top"
+            android:alpha="0" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RESPONSE"
+            android:id="@+id/textView4"
+            android:layout_row="3"
+            android:layout_column="1"
+            android:layout_rowSpan="2"
+            android:layout_gravity="center"
+            android:layout_marginBottom="40dp"
+            android:layout_marginRight="40dp" />
+
+        <Spinner
+            android:layout_width="280dp"
+            android:layout_height="52dp"
+            android:id="@+id/feelingSpinner"
+            android:layout_below="@+id/questionLabel"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_row="4"
+            android:layout_column="0"
+            android:background="@android:drawable/btn_dropdown"
+            android:alpha=".5"
+            android:layout_columnSpan="3"
+            android:layout_marginLeft="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SEVERITY"
+            android:id="@+id/Severity"
+            android:layout_row="5"
+            android:layout_column="1"
+            android:layout_gravity="center"
+            android:layout_marginRight="40dp" />
+
+        <Spinner
+            android:layout_width="278dp"
+            android:layout_height="53dp"
+            android:id="@+id/severitySpinner"
+            android:layout_above="@+id/btn_question_next"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_row="6"
+            android:layout_column="0"
+            android:alpha=".5"
+            android:background="@android:drawable/btn_dropdown"
+            android:layout_columnSpan="3"
+            android:layout_marginLeft="20dp" />
+
+        <ImageButton
+            android:text="Next"
+            android:layout_width="124dp"
+            android:layout_height="110dp"
+            android:id="@+id/btn_question_next"
+            android:layout_above="@+id/newMessage"
+            android:background="@drawable/nextarrow"
+            android:minHeight="15dp"
+            android:minWidth="75dp"
+            android:layout_alignRight="@+id/content"
+            android:layout_alignEnd="@+id/content"
+            android:padding="25dp"
+            android:maxHeight="20dp"
+            android:layout_row="2"
+            android:layout_column="2"
+            android:layout_gravity="top|left"
+            android:layout_marginRight="375dp"
+            android:alpha="0"
+            android:layout_marginLeft="0dp" />
+
+        <ImageButton
+            android:layout_width="136dp"
+            android:layout_height="match_parent"
+            android:text="Return to Guide"
+            android:id="@+id/evaluate"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_row="6"
+            android:layout_column="1"
+            android:layout_columnSpan="2"
+            android:background="@drawable/exit"
+            android:layout_marginTop="50dp"
+            android:adjustViewBounds="true"
+            android:layout_gravity="bottom|center"
+            android:layout_marginRight="250dp"
+            android:alpha="0" />
+
+        <ImageButton
+            android:layout_width="187dp"
+            android:layout_height="40dp"
+            android:text="New Message"
+            android:id="@+id/newMessage"
+            android:layout_above="@+id/evaluate"
+            android:singleLine="true"
+            android:background="@drawable/sendmessage"
+            android:layout_centerHorizontal="true"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:layout_gravity="left|center"
+            android:layout_marginRight="30dp"
+            android:alpha="0" />
+
+    </GridLayout>
+
+</RelativeLayout>

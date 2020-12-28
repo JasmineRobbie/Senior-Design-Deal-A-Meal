@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.NeuralNet.AzureCloud.FullMessage2">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tempIDplaceHolder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:padding="15dp"
+            android:text="Subject:"
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/subjectBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginBottom="620dp"
+            android:padding="15dp"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/messageTempHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tempIDplaceHolder"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="89dp"
+            android:padding="15dp"
+            android:text="Message:"
+            android:textSize="30dp" />
+
+
+        <TextView
+            android:id="@+id/messageBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/messageTempHolder"
+            android:textSize="20dp"
+            android:padding="15dp"/>
+
+
+        <Button
+
+            android:id="@+id/backBtn"
+            android:layout_width="99dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/replyBtn"
+            android:layout_alignTop="@id/messageBox"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="14dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="443dp"
+            android:layout_marginBottom="300dp"
+            android:text="Back"/>
+
+        <Button
+            android:id="@+id/replyBtn"
+            android:layout_width="108dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/messageBox"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="138dp"
+            android:layout_marginTop="443dp"
+            android:layout_marginBottom="300dp"
+            android:text="Reply"/>
+
+        <Button
+            android:id="@+id/deleteBtn"
+            android:layout_width="96dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/messageBox"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="275dp"
+            android:layout_marginTop="442dp"
+            android:layout_marginBottom="300dp"
+            android:text="Delete"/>
+
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

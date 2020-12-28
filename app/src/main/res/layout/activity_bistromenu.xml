@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.NeuralNet.AzureCloud.Bistromenu"
+    android:background="@drawable/menubistro">
+
+
+    <Button
+        android:id="@+id/cuisineButtonTwo"
+        android:layout_width="256dp"
+        android:layout_height="74dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="78dp"
+        android:layout_marginRight="78dp"
+        android:layout_marginBottom="96dp" />
+
+    <Button
+        android:id="@+id/helpBtn"
+        android:layout_width="84dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="43dp"
+        android:layout_marginBottom="4dp" />
+
+</RelativeLayout>

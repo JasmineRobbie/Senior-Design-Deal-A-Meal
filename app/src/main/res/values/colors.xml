@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="holo_light_primary">#03c8f4</color>
+    <color name="holo_light_primary_dark">#f7eded</color>
+    <color name="bright_foreground_holo_light">#03c8f4</color>
+    <color name="mindsetColor">#FD0001</color>
+    <color name="educationColor">#FD6501</color>
+    <color name="socialColor">#FDCA01</color>
+    <color name="dutiesColor">#007EBA</color>
+    <color name="healthColor">#980001</color>
+    <color name="tranquilityColor">#9833CB</color>
+    <color name="restColor">#656566</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+</resources>
