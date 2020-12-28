@@ -29,13 +29,14 @@ public class EditMyGoals extends Activity implements OnItemSelectedListener{
     Button editMyGoalsReturnBtn, calculateBMIbtn, goalsEditSubmitBtn;
     EditText myWeightEditInput, myAgeInput;
     TextView myNewCalculatedBMI, allowedCaloriesUpdatedText;
-    Spinner myHeightFeetInput, myHeightInchesInput, chooseGoalInput, chooseGenderInput;
+    Spinner myHeightFeetInput, myHeightInchesInput, chooseGoalInput, chooseGenderInput, chooseAllergiesInput;
     double userHeight, userWeight, calculatedBMI;
 
     List<String> heightInFeet = new ArrayList<String>();
     List<String> heightInInches = new ArrayList<String>();
     List<String> goals = new ArrayList<String>();
     List<String> gender = new ArrayList<String>();
+    List<String> allergies = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,11 +56,13 @@ public class EditMyGoals extends Activity implements OnItemSelectedListener{
         myHeightInchesInput = findViewById(R.id.myHeightInchesInput);
         chooseGoalInput = findViewById(R.id.chooseGoalInput);
         chooseGenderInput = findViewById(R.id.chooseGenderInput);
+        chooseAllergiesInput = findViewById(R.id.chooseAllergiesInput);
 
         myHeightFeetInput.setOnItemSelectedListener(this);
         myHeightInchesInput.setOnItemSelectedListener(this);
         chooseGoalInput.setOnItemSelectedListener(this);
         chooseGenderInput.setOnItemSelectedListener(this);
+        chooseAllergiesInput.setOnItemSelectedListener(this);
 
         // Spinner Drop down elements
         heightInFeet.add("3");
@@ -87,24 +90,32 @@ public class EditMyGoals extends Activity implements OnItemSelectedListener{
         gender.add("Male");
         gender.add("Female");
 
+        allergies.add("Peanuts");
+        allergies.add("Lactose");
+        allergies.add("Fish");
+        allergies.add("ShellFish");
+        allergies.add("Soy");
+
         // Creating adapter for spinner
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, heightInFeet);
         ArrayAdapter<String> dataAdapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, heightInInches);
         ArrayAdapter<String> dataAdapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, goals);
         ArrayAdapter<String> dataAdapter4 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, gender);
-
+        ArrayAdapter<String> dataAdapter5 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, allergies);
 
         // Drop down layout style - list view with radio button
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         dataAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         dataAdapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         dataAdapter4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        dataAdapter5.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         // attaching data adapter to spinner
         myHeightFeetInput.setAdapter(dataAdapter);
         myHeightInchesInput.setAdapter(dataAdapter2);
         chooseGoalInput.setAdapter(dataAdapter3);
         chooseGenderInput.setAdapter(dataAdapter4);
+        chooseAllergiesInput.setAdapter(dataAdapter5);
 
         //Only calculating BMI button
         calculateBMIbtn.setOnClickListener(new View.OnClickListener() {
