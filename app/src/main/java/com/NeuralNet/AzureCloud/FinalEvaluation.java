@@ -85,6 +85,8 @@ public class FinalEvaluation extends Activity {
                 } catch (Exception e) {
 
                 }
+                //Testing out referral text
+                System.out.println("Referral text: " + referralText);
 
                 if (referralText != null && referralText.length() > 0) {
                     // processes referral
