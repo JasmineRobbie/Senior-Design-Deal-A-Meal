@@ -209,7 +209,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="19dp"
         android:layout_marginLeft="19dp"
-        android:layout_marginTop="134dp"
+        android:layout_marginTop="127dp"
         android:text="Enter Weight:"
         android:textSize="60px" />
 
@@ -222,7 +222,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="221dp"
         android:layout_marginLeft="221dp"
-        android:layout_marginTop="131dp"
+        android:layout_marginTop="126dp"
         android:hint="Enter Weight"
         android:textSize="60px" />
 
@@ -274,7 +274,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="209dp"
         android:layout_marginLeft="209dp"
-        android:layout_marginTop="180dp" />
+        android:layout_marginTop="186dp" />
 
     <Spinner
         android:id="@+id/myHeightInchesInput"
@@ -285,7 +285,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="285dp"
         android:layout_marginLeft="285dp"
-        android:layout_marginTop="181dp" />
+        android:layout_marginTop="185dp" />
 
     <Button
         android:id="@+id/calculateBMIbtn"
