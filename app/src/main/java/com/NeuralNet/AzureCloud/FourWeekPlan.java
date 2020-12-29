@@ -21,7 +21,7 @@ import java.sql.ResultSet;
 
 public class FourWeekPlan extends Activity {
 
-    Button previousDayBtn, nextDayBtn, eraseButton, memoButton, helpButton;
+    Button previousDayBtn, nextDayBtn, eraseButton, memoButton, helpButton, returnButton;
     ViewFlipper viewFlipper;
 
     ImageView hourOne, hourTwo, hourThree, hourFour, hourFive, hourSix, hourSeven, hourEight,hourNine,hourTen, hourEleven, hourTwelve;
@@ -94,6 +94,7 @@ public class FourWeekPlan extends Activity {
         hourTwelve = findViewById(R.id.hourTwelve);
         memoButton = findViewById(R.id.memoBtn);
         helpButton = findViewById(R.id.helpBtn);
+        returnButton = findViewById(R.id.returnBtn);
 
         //Afternoon timeslots
 
@@ -342,6 +343,15 @@ public class FourWeekPlan extends Activity {
             @Override
             public void onClick(View view) {
                 alertdup.show();
+            }
+        });
+
+        //Return button
+        returnButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(FourWeekPlan.this, DealAMealList.class);
+                startActivity(intent);
             }
         });
 

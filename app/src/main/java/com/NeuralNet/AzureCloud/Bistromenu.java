@@ -15,7 +15,7 @@ import com.teamcarl.prototype.R;
 public class Bistromenu extends Activity {
 
     Button cuisineButtonTwo;
-    Button helpButton;
+    Button helpButton, returnButton;
 
 
 
@@ -43,6 +43,7 @@ public class Bistromenu extends Activity {
 
         cuisineButtonTwo = (Button) findViewById(R.id.cuisineButtonTwo);
         helpButton = (Button) findViewById(R.id.helpBtn);
+        returnButton = (Button) findViewById(R.id.returnBtn);
 
         cuisineButtonTwo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,6 +57,15 @@ public class Bistromenu extends Activity {
             @Override
             public void onClick(View view) {
                 alertdup.show();
+            }
+        });
+
+        //Return button
+        returnButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Bistromenu.this, DealAMealList.class);
+                startActivity(intent);
             }
         });
 

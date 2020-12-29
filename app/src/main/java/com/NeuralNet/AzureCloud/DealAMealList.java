@@ -18,7 +18,7 @@ import com.teamcarl.prototype.R;
 public class DealAMealList extends Activity {
 
 
-    Button userProfileBtn, pointOfConsumption, fourWeekBtn, helpButton;
+    Button userProfileBtn, pointOfConsumption, fourWeekBtn, helpButton, returnButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +48,7 @@ public class DealAMealList extends Activity {
         fourWeekBtn = (Button) findViewById(R.id.fourWeekTemplateButton);
         userProfileBtn = (Button) findViewById(R.id.userProfileButton);
         helpButton = (Button) findViewById(R.id.helpBtn);
+        returnButton = (Button) findViewById(R.id.returnBtn);
 
         System.out.println("testing");
         pointOfConsumption.setOnClickListener(new View.OnClickListener() {
@@ -81,6 +82,15 @@ public class DealAMealList extends Activity {
             @Override
             public void onClick(View view) {
                 alertdup.show();
+            }
+        });
+
+        //Return button
+        returnButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DealAMealList.this, Activemenu.class);
+                startActivity(intent);
             }
         });
 
