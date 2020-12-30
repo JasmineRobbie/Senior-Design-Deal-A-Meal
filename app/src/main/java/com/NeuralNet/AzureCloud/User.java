@@ -3,6 +3,9 @@ package com.NeuralNet.AzureCloud;
 import android.content.Context;
 import android.util.Log;
 
+import com.NeuralNet.AzureCloud.DataAccess;
+import com.NeuralNet.AzureCloud.InternalDataAccess;
+
 import java.io.Serializable;
 import java.sql.ResultSet;
 
@@ -35,6 +38,7 @@ public class User implements Serializable {
     public static String Goal;
     public static String Guide;
     public static String AllowedCalories;
+    public static String Allergies;
 
 
     public boolean isAnonymous;
@@ -68,6 +72,7 @@ public class User implements Serializable {
                     ", ISNULL(Goal,'')\n" +
                     ", ISNULL(Guide,'')\n" +
                     ", ISNULL(AllowedCalories,'')\n" +
+                    ", ISNULL(Allergies,'')\n" +
 
                     "FROM USERS u\n" +
                     "JOIN BRAND b ON u.brandNumber = b.brandId\n" +
@@ -88,12 +93,13 @@ public class User implements Serializable {
                 City = result.getString(12);
                 Street = result.getString(13);
                 Password = result.getString(14);
-                //Nely added
+                //Newly added
                 BMI = result.getString(15);
                 Weight = result.getString(16);
                 Goal = result.getString(17);
                 Guide = result.getString(18);
                 AllowedCalories = result.getString(19);
+                Allergies = result.getString(20);
             }
         }
         catch(Exception e)

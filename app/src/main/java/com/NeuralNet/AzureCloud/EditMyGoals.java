@@ -1,7 +1,6 @@
 package com.NeuralNet.AzureCloud;
+
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +13,12 @@ import android.widget.TextView;
 import java.lang.Object;
 import java.lang.Number;
 import java.math.BigDecimal;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+
+import com.NeuralNet.AzureCloud.DataAccess;
+import com.NeuralNet.AzureCloud.MyGoals;
+import com.NeuralNet.AzureCloud.User;
 import com.teamcarl.prototype.R;
 
 import java.math.MathContext;
@@ -26,17 +31,19 @@ import android.widget.Toast;
 public class EditMyGoals extends Activity implements OnItemSelectedListener{
     //Accessing database and selecting information
     DataAccess db = new DataAccess();
-    String BMIString;
+    String BMIString, AllowedCalories, userAllergy;
 
-    Button editMyGoalsReturnBtn, calculateBMIbtn, goalsEditSubmitBtn, helpButton, sendMemoButton;
-    EditText myWeightEditInput;
-    TextView myNewCalculatedBMI;
-    Spinner myHeightFeetInput, myHeightInchesInput, chooseGoalInput;
+    Button editMyGoalsReturnBtn, calculateBMIbtn, goalsEditSubmitBtn,  helpButton, sendMemoButton;;
+    EditText myWeightEditInput, myAgeInput;
+    TextView myNewCalculatedBMI, allowedCaloriesUpdatedText;
+    Spinner myHeightFeetInput, myHeightInchesInput, chooseGoalInput, chooseGenderInput, chooseAllergiesInput;
     double userHeight, userWeight, calculatedBMI;
 
     List<String> heightInFeet = new ArrayList<String>();
     List<String> heightInInches = new ArrayList<String>();
     List<String> goals = new ArrayList<String>();
+    List<String> gender = new ArrayList<String>();
+    List<String> allergies = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +65,7 @@ public class EditMyGoals extends Activity implements OnItemSelectedListener{
                     }
                 }
         );
+
         final AlertDialog alertdup = b1.create();
         //alert dialog
 
@@ -68,15 +76,21 @@ public class EditMyGoals extends Activity implements OnItemSelectedListener{
         goalsEditSubmitBtn = findViewById(R.id.goalsEditSubmitBtn);
         helpButton = findViewById(R.id.helpBtn);
         sendMemoButton = findViewById(R.id.sendMemoBtn);
+        allowedCaloriesUpdatedText = findViewById(R.id.allowedCaloriesUpdatedText);
+        myAgeInput = findViewById(R.id.myAgeInput);
 
         //Spinner declaration
         myHeightFeetInput = findViewById(R.id.myHeightFeetInput);
         myHeightInchesInput = findViewById(R.id.myHeightInchesInput);
         chooseGoalInput = findViewById(R.id.chooseGoalInput);
+        chooseGenderInput = findViewById(R.id.chooseGenderInput);
+        chooseAllergiesInput = findViewById(R.id.chooseAllergiesInput);
 
         myHeightFeetInput.setOnItemSelectedListener(this);
         myHeightInchesInput.setOnItemSelectedListener(this);
         chooseGoalInput.setOnItemSelectedListener(this);
+        chooseGenderInput.setOnItemSelectedListener(this);
+        chooseAllergiesInput.setOnItemSelectedListener(this);
 
         // Spinner Drop down elements
         heightInFeet.add("3");
@@ -101,20 +115,50 @@ public class EditMyGoals extends Activity implements OnItemSelectedListener{
         goals.add("Maintain Weight");
         goals.add("Gain Weight");
 
+        gender.add("Male");
+        gender.add("Female");
+
+        allergies.add("Nut");
+        allergies.add("Lactose");
+        allergies.add("Fish");
+        allergies.add("ShellFish");
+        allergies.add("Soy");
+
         // Creating adapter for spinner
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, heightInFeet);
         ArrayAdapter<String> dataAdapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, heightInInches);
         ArrayAdapter<String> dataAdapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, goals);
+        ArrayAdapter<String> dataAdapter4 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, gender);
+        ArrayAdapter<String> dataAdapter5 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, allergies);
 
         // Drop down layout style - list view with radio button
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         dataAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         dataAdapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        dataAdapter4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        dataAdapter5.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         // attaching data adapter to spinner
         myHeightFeetInput.setAdapter(dataAdapter);
         myHeightInchesInput.setAdapter(dataAdapter2);
         chooseGoalInput.setAdapter(dataAdapter3);
+        chooseGenderInput.setAdapter(dataAdapter4);
+        chooseAllergiesInput.setAdapter(dataAdapter5);
+
+        helpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alertdup.show();
+            }
+        });
+
+        sendMemoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                openNewMessage();
+            }
+        });
 
         //Only calculating BMI button
         calculateBMIbtn.setOnClickListener(new View.OnClickListener() {
@@ -129,8 +173,8 @@ public class EditMyGoals extends Activity implements OnItemSelectedListener{
         goalsEditSubmitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                calculateBMI();
                 setNewGoal();
+                setNewAllergy();
                 Toast.makeText(getApplicationContext(), "Submitted", Toast.LENGTH_SHORT).show();
             }
         });
@@ -141,21 +185,6 @@ public class EditMyGoals extends Activity implements OnItemSelectedListener{
             public void onClick(View view) {
                 Intent intent = new Intent(EditMyGoals.this, MyGoals.class);
                 startActivity(intent);
-            }
-        });
-
-        helpButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                alertdup.show();
-            }
-        });
-
-        sendMemoButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                openNewMessage();
             }
         });
 
@@ -206,9 +235,10 @@ public class EditMyGoals extends Activity implements OnItemSelectedListener{
         } catch (Exception e) {
             System.out.println("OOPS Something went wrong.");
         }
+
     }
 
-    public void setNewGoal(){
+/*    public void setNewGoal(){
         String goal = chooseGoalInput.getSelectedItem().toString();
 
         System.out.println("Goal Chosen= " + goal);
@@ -220,17 +250,103 @@ public class EditMyGoals extends Activity implements OnItemSelectedListener{
         } catch (Exception e) {
             System.out.println("OOPS Something went wrong.");
         }
+    }*/
+
+
+
+    public void setNewGoal(){
+        double calories = 0.0;
+        System.out.print("SETTING NEW GOAL");
+
+        String goal = chooseGoalInput.getSelectedItem().toString();
+        String userGender = chooseGenderInput.getSelectedItem().toString();
+        String feet = myHeightFeetInput.getSelectedItem().toString();
+        String inches = myHeightInchesInput.getSelectedItem().toString();
+        final String weight = myWeightEditInput.getText().toString();
+        final String userAge = myAgeInput.getText().toString();
+
+        int h =Integer.parseInt(feet);
+        int i =Integer.parseInt(inches);
+        int w =Integer.parseInt(weight);
+        double age=Double.parseDouble(userAge);
+
+        userHeight = ((h*12) + (i));    //in inches
+        userWeight = w; //in pounds
+        calculatedBMI = (703 * userWeight) / (userHeight * userHeight);
+
+        //Round value
+        BigDecimal better = new BigDecimal(calculatedBMI);
+        BigDecimal roundedValue = better.round(new MathContext(3));
+
+        BMIString = String.valueOf(roundedValue);
+
+//Imperial formula for men
+//BMR = 66.47 + ( 6.24 × weight in pounds ) + ( 12.7 × height in inches ) − ( 6.755 × age in years )
+
+//Imperial formula for women
+//BMR = 655.1 + ( 4.35 × weight in pounds ) + ( 4.7 × height in inches ) − ( 4.7 × age in years )
+
+
+        //Calculating Calories
+
+        //Gender is Male
+        if(userGender == "Male" && goal == "Lose Weight"){
+            calories = (655.1 + (4.35 * userWeight) + (4.7 * userHeight) - (4.7 * age));
+            calories *= .85;
+        }
+        if(userGender == "Male" && goal == "Maintain Weight"){
+            calories = (66.47 + (6.24 * userWeight) + (12.7 * userHeight) - (6.755 * age));
+        }
+        if(userGender == "Male" && goal == "Gain Weight"){
+            calories = (655.1 + (4.35 * userWeight) + (4.7 * userHeight) - (4.7 * age));
+            calories *= 1.2;
+        }
+
+
+        //Gender is Female
+        if(userGender == "Female" && goal == "Lose Weight"){
+            calories = (655.1 + (4.35 * userWeight) + (4.7 * userHeight) - (4.7 * age));
+            calories *= .80;
+        }
+        if (userGender == "Female" && goal == "Maintain Weight"){
+            calories = (655.1 + (4.35 * userWeight) + (4.7 * userHeight) - (4.7 * age));
+        }
+        if(userGender == "Female" && goal == "Gain Weight"){
+            calories = (655.1 + (4.35 * userWeight) + (4.7 * userHeight) - (4.7 * age));
+            calories *= 1.15;
+        }
+
+        System.out.print("Calories: " + calories);
+
+        AllowedCalories = String.valueOf(calories);
+
+        allowedCaloriesUpdatedText.setText(AllowedCalories);
+
+        String query = "UPDATE USERS SET AllowedCalories = '" + AllowedCalories + "', Goal = '" + goal + "' WHERE userid = " + User.UserID;
+
+        try {
+            db.executeNonQuery(query);
+        } catch (Exception e) {
+            System.out.println("OOPS Something went wrong.");
+        }
     }
 
-    void openNewMessage(){
-        Intent intent = new Intent(EditMyGoals.this, Inbox.class);
+    public void setNewAllergy(){
+        System.out.print("SETTING NEW ALLERGY");
 
+        userAllergy = chooseAllergiesInput.getSelectedItem().toString();
+
+        String query = "UPDATE USERS SET Allergies = '" + userAllergy  + "' WHERE userid = " + User.UserID;
+
+        try {
+            db.executeNonQuery(query);
+        } catch (Exception e) {
+            System.out.println("OOPS Something went wrong.");
+        }
+    }
+
+    void openNewMessage() {
+        Intent intent = new Intent(EditMyGoals.this, Inbox.class);
         startActivity(intent);
     }
-
-
-    //Calculate allowed calorie intake based on BMI and goal
-    //Take parameters BMI and goal
-    //going to have to double some functions from both previous functions
-
 }
