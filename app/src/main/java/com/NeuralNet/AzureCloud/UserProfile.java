@@ -6,10 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
 import com.teamcarl.prototype.R;
 
 public class UserProfile extends Activity {
-    Button aboutMeBtn, myGoalsBtn, helpButton, profileReturnBtn, profileMemoBtn;
+    Button aboutMeBtn, myGoalsBtn, helpButton, profileReturnBtn, profileMemoBtn, mealHistoryButton, resetPlanButton;
+    TextView mealHistoryTextview, resetPlanTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,11 @@ public class UserProfile extends Activity {
         myGoalsBtn = findViewById(R.id.myGoalsBtn);
         helpButton = findViewById(R.id.helpBtn);
         profileMemoBtn = findViewById(R.id.profileMemoBtn);
+        mealHistoryButton = findViewById(R.id.mealHistoryBtn);
+        mealHistoryTextview = findViewById(R.id.mealHistoryTextView);
+        resetPlanTextView = findViewById(R.id.resetPlanTV);
+        resetPlanButton = findViewById(R.id.resetPlanBtn);
+
 
         //about me button
         aboutMeBtn.setOnClickListener(new View.OnClickListener() {
@@ -70,6 +78,22 @@ public class UserProfile extends Activity {
             @Override
             public void onClick(View view) {
                 alertdup.show();
+            }
+        });
+
+        mealHistoryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(UserProfile.this, HistoryLog.class);
+                startActivity(intent);
+            }
+        });
+
+        resetPlanButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(UserProfile.this, ResetPlan.class);
+                startActivity(intent);
             }
         });
     }

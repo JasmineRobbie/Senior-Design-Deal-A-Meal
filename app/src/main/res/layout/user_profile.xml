@@ -64,5 +64,49 @@
         android:layout_marginLeft="25dp"
         android:layout_marginBottom="4dp" />
 
+    <TextView
+        android:id="@+id/mealHistoryTextView"
+        android:layout_width="186dp"
+        android:layout_height="52dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="118dp"
+        android:layout_marginBottom="342dp"
+        android:text="Meal History"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/mealHistoryBtn"
+        android:layout_width="250dp"
+        android:layout_height="74dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="80dp"
+        android:layout_marginBottom="335dp" />
+
+    <TextView
+        android:id="@+id/resetPlanTV"
+        android:layout_width="152dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="130dp"
+        android:layout_marginRight="129dp"
+        android:layout_marginBottom="126dp"
+        android:text="Reset Plan"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/resetPlanBtn"
+        android:layout_width="249dp"
+        android:layout_height="71dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="84dp"
+        android:layout_marginRight="78dp"
+        android:layout_marginBottom="108dp" />
+
 
 </RelativeLayout>
