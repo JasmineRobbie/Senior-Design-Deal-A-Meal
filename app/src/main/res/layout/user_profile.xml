@@ -109,4 +109,17 @@
         android:layout_marginBottom="108dp" />
 
 
+    <Button
+        android:id="@+id/AIMealSelectorBtn"
+        android:layout_width="248dp"
+        android:layout_height="69dp"
+        android:text="AI Meal Selector"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="54dp"
+        android:layout_marginEnd="81dp"
+        android:layout_marginBottom="208dp"
+        android:textSize="24sp"/>
+
+
 </RelativeLayout>
