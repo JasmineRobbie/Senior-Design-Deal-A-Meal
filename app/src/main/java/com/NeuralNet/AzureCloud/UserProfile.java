@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.teamcarl.prototype.R;
 
 public class UserProfile extends Activity {
-    Button aboutMeBtn, myGoalsBtn, helpButton, profileReturnBtn, profileMemoBtn, mealHistoryButton, resetPlanButton;
+    Button aboutMeBtn, myGoalsBtn, helpButton, profileReturnBtn, profileMemoBtn, mealHistoryButton, resetPlanButton, AIBtn;
     TextView mealHistoryTextview, resetPlanTextView;
 
     @Override
@@ -45,6 +45,8 @@ public class UserProfile extends Activity {
         mealHistoryTextview = findViewById(R.id.mealHistoryTextView);
         resetPlanTextView = findViewById(R.id.resetPlanTV);
         resetPlanButton = findViewById(R.id.resetPlanBtn);
+
+        AIBtn = findViewById(R.id.AIMealSelectorBtn);
 
 
         //about me button
@@ -93,6 +95,15 @@ public class UserProfile extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(UserProfile.this, ResetPlan.class);
+                startActivity(intent);
+            }
+        });
+
+
+        AIBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UserProfile.this, AISystem.class);
                 startActivity(intent);
             }
         });
